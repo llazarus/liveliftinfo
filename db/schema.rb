@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2018_11_26_032216) do
   enable_extension "plpgsql"
 
   create_table "avalanches", force: :cascade do |t|
-    t.string "date_issued"
-    t.string "valid_until"
-    t.string "highlights"
+    t.datetime "date_issued"
+    t.datetime "valid_until"
+    t.text "highlights"
     t.jsonb "danger_ratings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

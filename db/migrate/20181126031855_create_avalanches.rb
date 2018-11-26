@@ -1,9 +1,9 @@
 class CreateAvalanches < ActiveRecord::Migration[5.2]
   def change
     create_table :avalanches do |t|
-      t.string :date_issued
-      t.string :valid_until
-      t.string :highlights
+      t.datetime :date_issued
+      t.datetime :valid_until
+      t.text :highlights
       t.jsonb :danger_ratings
 
       t.timestamps
