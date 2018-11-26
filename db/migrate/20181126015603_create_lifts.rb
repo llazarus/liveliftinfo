@@ -4,7 +4,7 @@ class CreateLifts < ActiveRecord::Migration[5.2]
       t.integer :lift_code
       t.string :name
       t.string :time_to_ride
-      t.string :type
+      t.string :lift_type
       t.string :capacity
       t.string :capacity_hr
       t.string :elevation_m

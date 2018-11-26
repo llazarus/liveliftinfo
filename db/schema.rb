@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_015603) do
     t.integer "lift_code"
     t.string "name"
     t.string "time_to_ride"
-    t.string "type"
+    t.string "lift_type"
     t.string "capacity"
     t.string "capacity_hr"
     t.string "elevation_m"
