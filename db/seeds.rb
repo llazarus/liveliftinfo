@@ -403,3 +403,5 @@ Lift.create(
   vertical_i: "625",
   alpine: true
 )
+
+puts "Lift table created and filled with static values!"
