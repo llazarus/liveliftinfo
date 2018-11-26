@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_015603) do
+ActiveRecord::Schema.define(version: 2018_11_26_032216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "avalanches", force: :cascade do |t|
+    t.string "date_issued"
+    t.string "valid_until"
+    t.string "highlights"
+    t.jsonb "danger_ratings"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "forecasts", force: :cascade do |t|
+    t.string "new_snow_i"
+    t.string "two_days_i"
+    t.string "seven_days_i"
+    t.string "snowpack_i"
+    t.jsonb "forecast"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lifts", force: :cascade do |t|
     t.integer "lift_code"
@@ -27,6 +46,14 @@ ActiveRecord::Schema.define(version: 2018_11_26_015603) do
     t.string "vertical_m"
     t.string "vertical_i"
     t.boolean "alpine"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.integer "lift_code"
+    t.string "name"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

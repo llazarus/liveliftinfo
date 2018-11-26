@@ -1,0 +1,2 @@
+class Avalanche < ApplicationRecord
+end
