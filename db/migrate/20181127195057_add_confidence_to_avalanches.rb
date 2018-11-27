@@ -1,0 +1,5 @@
+class AddConfidenceToAvalanches < ActiveRecord::Migration[5.2]
+  def change
+    add_column :avalanches, :confidence, :text
+  end
+end
