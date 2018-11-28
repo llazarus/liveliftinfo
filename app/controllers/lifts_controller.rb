@@ -1,5 +1,8 @@
 class LiftsController < ApplicationController
   def index
-    @current_user = current_user
+    @lifts = Lift.all
+  end
+
+  def show
   end
 end

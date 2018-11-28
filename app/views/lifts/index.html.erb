@@ -1,3 +1,91 @@
-<h1>Hello, World!</h1>
+<div>
 
-<%= current_user&.phone %>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#all-content" aria-controls="home" role="tab" data-toggle="tab">All Content</a></li>
+    <li role="presentation"><a href="#favorites" aria-controls="profile" role="tab" data-toggle="tab">Favorites</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <!-- #all-content tab -->
+    <div role="tabpanel" class="tab-pane fade show active" id="all-content">
+      
+      <!-- Collapse panels -->
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <!-- Lifts panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="heading-lifts-all">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-lifts-all" aria-expanded="true" aria-controls="collapse-lifts-all">
+                Lifts
+              </a>
+            </h4>
+          </div>
+          <div id="collapse-lifts-all" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-lifts-all">
+            <div class="panel-body">
+              Replace this with two more collapse panels: one for Whistler and one for Blackcomb
+            </div>
+          </div>
+        </div>
+
+        <!-- Cams panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="heading-cams-all">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-cams-all" aria-expanded="false" aria-controls="collapse-cams-all">
+                Live Cams
+              </a>
+            </h4>
+          </div>
+          <div id="collapse-cams-all" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-cams-all">
+            <div class="panel-body">
+              Replace this with two collapse panels: one for mountain cams and one for road cams
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather Forecast panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="heading-weather">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-weather" aria-expanded="false" aria-controls="collapse-weather">
+                Weather Forecast
+              </a>
+            </h4>
+          </div>
+          <div id="collapse-weather" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-weather">
+            <div class="panel-body">
+              Render weather forecast here!
+            </div>
+          </div>
+        </div>
+
+        <!-- Avalanche Forecast panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="heading-avalanche">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-avalanche" aria-expanded="false" aria-controls="collapse-avalanche">
+                Avalanche Forecast
+              </a>
+            </h4>
+          </div>
+          <div id="collapse-avalanche" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-avalanche">
+            <div class="panel-body">
+              Render Avalanche Canada forecast here!
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- #favorites tab -->
+    <div role="tabpanel" class="tab-pane fade" id="favorites">
+      This will be the same as the above, but sorted to only diplay content favorited by the user!
+    </div>
+
+  </div>
+
+</div>
