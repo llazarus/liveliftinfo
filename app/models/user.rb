@@ -4,5 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  validates :phone, phone: { possible: true, types: :mobile, countries: [:us, :ca] }
+  before_validation :strip_non_numeric
+
+  validates :phone, phone: { possible: true, types: :mobile, countries: [:us, :ca], sanitized: true }
+
+  def strip_non_numeric
+    self.phone = phone.gsub(/\D/, '')
+  end
 end
