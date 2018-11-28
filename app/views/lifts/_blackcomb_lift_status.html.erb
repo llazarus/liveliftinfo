@@ -1,0 +1,35 @@
+<div class="panel-group" id="accordion-blackcomb-all" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading-blackcomb-all">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-all" href="#collapse-blackcomb-all" aria-expanded="true" aria-controls="collapse-blackcomb-all">
+          Blackcomb Mountain
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-blackcomb-all" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="heading-blackcomb-all">
+      <div class="panel-body">
+        <div class="panel-group" id="accordion-blackcomb-lifts-all" role="tablist" aria-multiselectable="true">
+          <!-- Render a panel for each Blackcomb list -->
+          <% @blackcomb_lifts.each do |lift| %>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading-<%= lift.lift_code %>-all">
+                <h5 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-lifts-all" href="#collapse-<%= lift.lift_code %>-all" aria-expanded="true" aria-controls="collapse-<%= lift.lift_code %>-all">
+                    <%= lift.name %>
+                  </a>
+                </h5>
+              </div>
+              <div id="collapse-<%= lift.lift_code %>-all" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= lift.lift_code %>-all">
+                <div class="panel-body">
+                  Add panel with lift#show here!
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

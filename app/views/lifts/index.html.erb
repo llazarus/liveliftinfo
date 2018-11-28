@@ -12,20 +12,23 @@
     <div role="tabpanel" class="tab-pane fade show active" id="all-content">
       
       <!-- Collapse panels -->
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel-group" id="accordion-all" role="tablist" aria-multiselectable="true">
 
         <!-- Lifts panel -->
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="heading-lifts-all">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-lifts-all" aria-expanded="true" aria-controls="collapse-lifts-all">
+            <h3 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-lifts-all" aria-expanded="true" aria-controls="collapse-lifts-all">
                 Lifts
               </a>
-            </h4>
+            </h3>
           </div>
-          <div id="collapse-lifts-all" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-lifts-all">
+          <div id="collapse-lifts-all" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="heading-lifts-all">
             <div class="panel-body">
-              Replace this with two more collapse panels: one for Whistler and one for Blackcomb
+              <%# Render all Blackcomb lifts %>
+              <%= render "blackcomb_lift_status" %>
+              <%# Render all Whistler lifts %>
+              <%= render "whistler_lift_status" %>
             </div>
           </div>
         </div>
@@ -33,11 +36,11 @@
         <!-- Cams panel -->
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="heading-cams-all">
-            <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-cams-all" aria-expanded="false" aria-controls="collapse-cams-all">
+            <h3 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-cams-all" aria-expanded="false" aria-controls="collapse-cams-all">
                 Live Cams
               </a>
-            </h4>
+            </h3>
           </div>
           <div id="collapse-cams-all" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-cams-all">
             <div class="panel-body">
@@ -49,11 +52,11 @@
         <!-- Weather Forecast panel -->
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="heading-weather">
-            <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-weather" aria-expanded="false" aria-controls="collapse-weather">
+            <h3 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-weather" aria-expanded="false" aria-controls="collapse-weather">
                 Weather Forecast
               </a>
-            </h4>
+            </h3>
           </div>
           <div id="collapse-weather" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-weather">
             <div class="panel-body">
@@ -65,11 +68,11 @@
         <!-- Avalanche Forecast panel -->
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="heading-avalanche">
-            <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-avalanche" aria-expanded="false" aria-controls="collapse-avalanche">
+            <h3 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-avalanche" aria-expanded="false" aria-controls="collapse-avalanche">
                 Avalanche Forecast
               </a>
-            </h4>
+            </h3>
           </div>
           <div id="collapse-avalanche" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-avalanche">
             <div class="panel-body">
@@ -89,3 +92,7 @@
   </div>
 
 </div>
+
+<% @whistler_lifts.each do |l| %>
+  <%= l.name %> <br>
+<% end %>
