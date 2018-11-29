@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def retrieve_lift_status(lift)
     code = lift.lift_code
-    Status.where(lift_code: code).last.status
+     return Status.where(lift_code: code)
   end
   helper_method :retrieve_lift_status
 

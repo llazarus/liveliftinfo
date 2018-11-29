@@ -8,7 +8,7 @@ namespace :reset_day_lifts do
     wb_lifts.each do |lift|
       response_shortcut = response["lifts"][lift]
 
-      Status.create(lift_code: response_shortcut["liftId"],
+      Status.create(lift_code: response_shortcut["liftID"],
                     name: response_shortcut["liftName"],
                     status: response_shortcut["status"])
       puts "Reset status of #{response_shortcut["liftName"]}!"

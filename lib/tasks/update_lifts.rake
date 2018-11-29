@@ -13,7 +13,7 @@ namespace :update_lifts do
 
       if db_query_shortcut == []
         # Persist a new Status object if none already exist for comparison
-        Status.create(lift_code: response_shortcut["liftId"],
+        Status.create(lift_code: response_shortcut["liftID"],
                       name: response_shortcut["liftName"],
                       status: response_shortcut["status"])
         puts "Created new lift: #{response_shortcut["liftName"]}!"
