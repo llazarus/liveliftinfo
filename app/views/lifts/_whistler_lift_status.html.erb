@@ -18,6 +18,10 @@
                   <a role="button" data-toggle="collapse" data-parent="#accordion-whistler-lifts-all" href="#collapse-<%= lift.lift_code %>-all" aria-expanded="true" aria-controls="collapse-<%= lift.lift_code %>-all">
                     <%= lift.name %>
                   </a>
+                  <span>
+                    <%= lift.lift_code %>
+                    <%= retrieve_lift_status(lift) %>
+                  </span>
                 </h5>
               </div>
               <div id="collapse-<%= lift.lift_code %>-all" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= lift.lift_code %>-all">

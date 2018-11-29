@@ -1,0 +1,16 @@
+<p>
+Sea to Sky Avalanche Forecast: <br>
+Issued: <%= @avalanche.date_issued.strftime("%B %d, %Y") %> | 
+Valid Until: <%= @avalanche.valid_until.strftime("%B %d, %Y") %> <br>
+</p>
+Highlights: <%= @avalanche.highlights.html_safe %>
+<p>
+Report Confidence: <%= @avalanche.confidence %> <br><br>
+Danger Ratings: <br>
+<% 3.times do |day| %>
+  <%= string_to_date(@avalanche.danger_ratings[day]["date"]) %> | 
+  Alpine: <%= @avalanche.danger_ratings[day]["dangerRating"]["alp"].gsub(/:/, " - ") %> | Treeline: <%= @avalanche.danger_ratings[day]["dangerRating"]["tln"].gsub(/:/, " - ") %> | Below Treeline: <%= @avalanche.danger_ratings[day]["dangerRating"]["btl"].gsub(/:/, " - ") %>
+  <br>
+<% end %>
+<%= link_to "Full Forecast", "https://www.avalanche.ca/forecasts/sea-to-sky", target: :_blank %>
+</p>

@@ -60,7 +60,7 @@
           </div>
           <div id="collapse-weather" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-weather">
             <div class="panel-body">
-              Render weather forecast here!
+              <%= render "weather_forecast" %>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@
           </div>
           <div id="collapse-avalanche" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-avalanche">
             <div class="panel-body">
-              Render Avalanche Canada forecast here!
+              <%= render "avalanche_forecast" %>
             </div>
           </div>
         </div>
@@ -92,7 +92,3 @@
   </div>
 
 </div>
-
-<% @whistler_lifts.each do |l| %>
-  <%= l.name %> <br>
-<% end %>

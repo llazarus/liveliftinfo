@@ -1,0 +1,15 @@
+<p>
+  New Snow: <%= @weather.new_snow_i %> in. <br>
+  Snow (Two Days): <%= @weather.two_days_i %> in. <br>
+  Snow (Seven Days): <%= @weather.seven_days_i %> in. <br>
+  Mid-mtn. Snowpack: <%= @weather.snowpack_i %> in.
+</p>
+<p>
+  Forecast: <br>
+  <% 6.times do |day| %>
+  <%= @weather.forecast[day]["dayDescription"] %>: <%= @weather.forecast[0]["summaryDescription"] %> | 
+  High: <%= @weather.forecast[day]["temperatureHigh"] %> f. |
+  Low: <%= @weather.forecast[day]["temperatureLow"] %> f.
+  <br>
+  <% end %>  
+</p>
