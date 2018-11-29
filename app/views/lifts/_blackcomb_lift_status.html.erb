@@ -20,7 +20,7 @@
                   </a>
                   <span>
                     <%= lift.lift_code %>
-                    <%= Status.find_by(lift_code: lift.lift_code) %>
+                    <%= retrieve_lift_status(lift) %>
                   </span>
                 </h5>
               </div>
