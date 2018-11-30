@@ -1,15 +1,74 @@
-<p>
-  New Snow: <%= @weather.new_snow_i %> in. <br>
-  Snow (Two Days): <%= @weather.two_days_i %> in. <br>
-  Snow (Seven Days): <%= @weather.seven_days_i %> in. <br>
-  Mid-mtn. Snowpack: <%= @weather.snowpack_i %> in.
-</p>
-<p>
-  Forecast: <br>
-  <% 6.times do |day| %>
-  <%= @weather.forecast[day]["dayDescription"] %>: <%= @weather.forecast[0]["summaryDescription"] %> | 
-  High: <%= @weather.forecast[day]["temperatureHigh"] %> f. |
-  Low: <%= @weather.forecast[day]["temperatureLow"] %> f.
-  <br>
-  <% end %>  
-</p>
+<div class="container">
+  <div class="row">
+    <h4>Snow Report</h4>
+  </div>
+  <div class="row">
+    <div class="col">
+      SNOW SVG HERE!
+    </div>
+    <div class="col">
+      <div class="row">
+        New Snow: <%= @weather.new_snow_i %> in.
+      </div>
+      <div class="row">
+        Snow (Two Days): <%= @weather.two_days_i %> in.
+      </div>
+      <div class="row">
+        Snow (Seven Days): <%= @weather.seven_days_i %> in.
+      </div>
+      <div class="row">
+        Mid-mtn. Snowpack: <%= @weather.snowpack_i %> in.
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4>Daily Forecasts</h4>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      ICON PRIMARY HERE!
+    </div>
+    <div class="col">
+      <div class="row">
+        <%= @weather.forecast[0]["dayDescription"] %>
+      </div>
+      <div class="row">
+        Description: <%= @weather.forecast[0]["summaryDescription"] %>
+      </div>
+      <div class="row">
+        High: <%= @weather.forecast[0]["temperatureHigh"] %> f.
+      </div>
+      <div class="row">
+        Low: <%= @weather.forecast[0]["temperatureLow"] %> f.
+      </div>
+    </div>
+  </div>
+
+  <% 5.times do |day| %>
+    <div class="row">
+      <div class="col">
+        ICON SECONDARY HERE
+      </div>
+      <div class="col">
+        <div class="row">
+          <%= @weather.forecast[day+1]["dayDescription"] %>
+        </div>
+        <div class="row">
+          Description: <%= @weather.forecast[day+1]["summaryDescription"] %>
+        </div>
+        <div class="row">
+          High: <%= @weather.forecast[day+1]["temperatureHigh"] %> f.
+        </div>
+        <div class="row">
+          Low: <%= @weather.forecast[day+1]["temperatureLow"] %> f.
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    EXTERNAL LINK(S) HERE!
+  </div>
+</div>
