@@ -26,7 +26,7 @@
               </div>
               <div id="collapse-<%= lift.lift_code %>-all" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= lift.lift_code %>-all">
                 <div class="panel-body">
-                  Add panel with lift#show here!
+                  <%= render partial: "lifts/lift_show", locals: {lift: lift} %>
                 </div>
               </div>
             </div>

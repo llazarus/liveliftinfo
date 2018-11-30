@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="col">
+        LIFT SVG HERE!
+      </div>
+      <div class="col">
+        <div class="row">
+          Lift Capacity: <%= lift.capacity %> people
+        </div>
+        <div class="row">
+          Upload Capacity: <%= lift.capacity_hr %> people/hr.
+        </div>
+        <div class="row">
+          Time to Ride: <%= lift.time_to_ride %> min.
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        Lift Base Elevation: <%= lift.elevation_i %> ft.
+      </div>
+      <div class="row">
+        Vertical: <%= lift.vertical_i %> ft.
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table table-sm table-borderless">
+      <thead>
+        <tr>
+          <th scope="row">
+            New Snow
+          </th>
+        </tr>
+        <tr>
+          <td>24 Hours: </td>
+          <td>48 Hours: </td>
+          <td>Past Week: </td>
+        </tr>
+      </thead>
+
+      <% 7.times do |day| %>
+        <tbody>
+          <tr>
+            <th scope="row">Day</th>
+            <td>
+              Open?
+            </td>
+            <td>
+              Closed?
+            </td>
+          </tr>
+        </tbody>
+      <% end %>
+      
+    </table>
+  </div>
+</div>
