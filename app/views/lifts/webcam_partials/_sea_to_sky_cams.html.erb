@@ -1,0 +1,30 @@
+<div class="panel-group" id="road-cams-s2s-area" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="road-cams-s2s-north">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#road-cams-s2s-area" href="#collapse-road-cams-s2s-north" aria-expanded="true" aria-controls="collapse-road-cams-s2s-north">
+          North of Whistler
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-road-cams-s2s-north" class="panel-collapse collapse" role="tabpanel" aria-labelledby="road-cams-s2s-north">
+      <div class="panel-body">
+        <%= render partial: "lifts/webcam_partials/sea_to_sky_north" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="road-cams-s2s-south">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#road-cams-s2s-area" href="#collapse-road-cams-s2s-south" aria-expanded="false" aria-controls="collapse-road-cams-s2s-south">
+          South of Whistler
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-road-cams-s2s-south" class="panel-collapse collapse" role="tabpanel" aria-labelledby="road-cams-s2s-south">
+      <div class="panel-body">
+        <%= render partial: "lifts/webcam_partials/sea_to_sky_south" %>
+      </div>
+    </div>
+  </div>
+</div>

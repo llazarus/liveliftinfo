@@ -1,0 +1,30 @@
+<div class="panel-group" id="all-cams" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="all-cams-mountain">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#all-cams" href="#collapse-all-cams-mountain" aria-expanded="true" aria-controls="collapse-all-cams-mountain">
+          Mountain Cams
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-all-cams-mountain" class="panel-collapse collapse" role="tabpanel" aria-labelledby="all-cams-mountain">
+      <div class="panel-body">
+        <%= render partial: "lifts/webcam_partials/mountain_cams" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="all-cams-road">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#all-cams" href="#collapse-all-cams-road" aria-expanded="false" aria-controls="collapse-all-cams-road">
+          Road Cams
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-all-cams-road" class="panel-collapse collapse" role="tabpanel" aria-labelledby="all-cams-road">
+      <div class="panel-body">
+        <%= render partial: "lifts/webcam_partials/road_cams" %>
+      </div>
+    </div>
+  </div>
+</div>
