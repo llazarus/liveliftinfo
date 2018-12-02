@@ -12,3 +12,12 @@
  *
  */
  @import 'bootstrap';
+
+ .panel-heading  a:after {
+  content: url("..images/general_icons/collapse_open.svg") !important;
+  float: right;
+}
+
+.panel-title[aria-expanded="true"]::after {
+  content: "hello" !important;
+}
