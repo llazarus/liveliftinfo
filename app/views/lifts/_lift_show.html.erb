@@ -1,19 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div class="col">
-        LIFT SVG HERE!
+      <img src="<%= retrieve_lift_image(lift.lift_type) %>" class="lift-image">
+    </div>
+    <div class="col">
+      <div class="row">
+        Lift Capacity: <%= lift.capacity %> people
       </div>
-      <div class="col">
-        <div class="row">
-          Lift Capacity: <%= lift.capacity %> people
-        </div>
-        <div class="row">
-          Upload Capacity: <%= lift.capacity_hr %> people/hr.
-        </div>
-        <div class="row">
-          Time to Ride: <%= lift.time_to_ride %> min.
-        </div>
+      <div class="row">
+        Upload Capacity: <%= lift.capacity_hr %> people/hr.
+      </div>
+      <div class="row">
+        Time to Ride: <%= lift.time_to_ride %> min.
       </div>
     </div>
     <div class="col">

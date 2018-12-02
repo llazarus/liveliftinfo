@@ -9,6 +9,9 @@ namespace :update_avalanche do
                          highlights: response["highlights"],
                          confidence: response["confidence"],
                          danger_ratings: response["dangerRatings"])
+    
+    a.confidence.chomp(" - ")
+    a.save
 
     puts "Updated Avalanche Forecast, id: #{a.id}"
     puts "<<< Update Complete: Avalanche Forecast >>>"

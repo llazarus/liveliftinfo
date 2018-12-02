@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h4>Sea To Sky Avalanche Forecast</h4>
+      <h4>Avalanche Canada Sea To Sky Forecast</h4>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
 
   <div class="row">
     <div class="col">
-      AVALANCHE SVG HERE!
+      <img src="/assets/general_icons/avalanche_icon.png" alt="avalanche icon" class="avalanche-image">
     </div>
     <div class="col">
       <div class="row">
@@ -32,8 +32,8 @@
     <table class="table table-sm table-borderless">
       <thead>
         <tr>
-          <th scope="col">
-            Danger Ratings
+          <th scope="col" class="avalanche-th" id="avalanche-th" colspan="2">
+            Danger Ratings:
           </th>
         </tr>
       </thead>
@@ -41,7 +41,7 @@
       <% 3.times do |day| %>
         <thead>
           <tr>
-            <th scope="col">
+            <th scope="col" class="avalanche-th" colspan="2">
               <%= string_to_date(@avalanche.danger_ratings[day]["date"]) %>
             </th>
           </tr>
@@ -49,20 +49,20 @@
       
         <tbody>
           <tr>
-            <th scope="row">Alpine</th>
-            <td>
+            <th scope="row" class="avalanche-alp">Alpine</th>
+            <td style="<%= avalanche_background_color(@avalanche.danger_ratings[day]["dangerRating"]["alp"].first) %>" >
               <%= @avalanche.danger_ratings[day]["dangerRating"]["alp"].gsub(/:/, " - ") %>
             </td>
           </tr>
           <tr>
-            <th scope="row">Treeline</th>
-            <td>
+            <th scope="row" class="avalanche-tln">Treeline</th>
+            <td style="<%= avalanche_background_color(@avalanche.danger_ratings[day]["dangerRating"]["tln"].first) %>" >
               <%= @avalanche.danger_ratings[day]["dangerRating"]["tln"].gsub(/:/, " - ") %>
             </td>
           </tr>
           <tr>
-            <th scope="row">Below Treeline</th>
-            <td>
+            <th scope="row" class="avalanche-btl">Below Treeline</th>
+            <td style="<%= avalanche_background_color(@avalanche.danger_ratings[day]["dangerRating"]["btl"].first) %>">
               <%= @avalanche.danger_ratings[day]["dangerRating"]["btl"].gsub(/:/, " - ") %>
             </td>
           </tr>
@@ -73,25 +73,7 @@
   </div>
 
   <div class="row">
-    SVG/LINK HERE! | <%= link_to "Full Avalanche Canada Forecast", "https://www.avalanche.ca/forecasts/sea-to-sky", target: :_blank %>
+    <img src="/assets/general_icons/external_link.png" class="external-link">
+    <%= link_to " Full Avalanche Canada Forecast", "https://www.avalanche.ca/forecasts/sea-to-sky", target: :_blank %>
   </div>
 </div>
-
-<!--
-<p>
-  Sea to Sky Avalanche Forecast: <br>
-  Issued: <%= @avalanche.date_issued.strftime("%B %d, %Y") %> | 
-  Valid Until: <%= @avalanche.valid_until.strftime("%B %d, %Y") %> <br>
-  </p>
-  Highlights: <%= @avalanche.highlights.html_safe %>
-  <p>
-  Report Confidence: <%= @avalanche.confidence %> <br><br>
-  Danger Ratings: <br>
-  <% 3.times do |day| %>
-    <%= string_to_date(@avalanche.danger_ratings[day]["date"]) %> | 
-    Alpine: <%= @avalanche.danger_ratings[day]["dangerRating"]["alp"].gsub(/:/, " - ") %> | Treeline: <%= @avalanche.danger_ratings[day]["dangerRating"]["tln"].gsub(/:/, " - ") %> | Below Treeline: <%= @avalanche.danger_ratings[day]["dangerRating"]["btl"].gsub(/:/, " - ") %>
-    <br>
-  <% end %>
-  <%= link_to "Full Forecast", "https://www.avalanche.ca/forecasts/sea-to-sky", target: :_blank %>
-</p>
--->

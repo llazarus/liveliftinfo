@@ -2,7 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="heading-blackcomb-all">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-all" href="#collapse-blackcomb-all" aria-expanded="true" aria-controls="collapse-blackcomb-all">
+        <a class="pl-3" role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-all" href="#collapse-blackcomb-all" aria-expanded="true" aria-controls="collapse-blackcomb-all">
           Blackcomb Mountain
         </a>
       </h4>
@@ -15,13 +15,9 @@
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="heading-<%= lift.lift_code %>-all">
                 <h5 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-lifts-all" href="#collapse-<%= lift.lift_code %>-all" aria-expanded="true" aria-controls="collapse-<%= lift.lift_code %>-all">
+                  <a class="pl-4" role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-lifts-all" href="#collapse-<%= lift.lift_code %>-all" aria-expanded="false" aria-controls="collapse-<%= lift.lift_code %>-all">
                     <%= lift.name %>
                   </a>
-                  <span>
-                    <%= lift.lift_code %>
-                    <%= retrieve_lift_status(lift) %>
-                  </span>
                 </h5>
               </div>
               <div id="collapse-<%= lift.lift_code %>-all" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= lift.lift_code %>-all">

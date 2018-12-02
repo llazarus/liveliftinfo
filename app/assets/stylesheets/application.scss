@@ -12,12 +12,72 @@
  *
  */
  @import 'bootstrap';
+ @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
- .panel-heading  a:after {
-  content: url("..images/general_icons/collapse_open.svg") !important;
-  float: right;
+body {
+  margin: 0;
 }
 
-.panel-title[aria-expanded="true"]::after {
-  content: "hello" !important;
+#accordion-all, .panel-title, .panel-group {
+  background-color: #f7f7f7;
+}
+
+.panel-body {
+  background-color: lightcyan;
+}
+
+// Position <a> elements w/in. .panel-title
+.panel-title > a {
+  display: block;
+  position: relative;
+}
+
+// Render down-facing FA chevron on closed panels
+.panel-title > a:after {
+  content: "\f078"; 
+  font-family: 'FontAwesome';
+  position: relative;
+  float: left;
+  margin-top: 0.1em;
+  margin-right: 15px;
+  padding-left: 15px;
+  font-size: 0.8em;
+
+// Render up-facing FA chevron on open panels
+}
+.panel-title > a[aria-expanded="true"]:after {
+  content: "\f077"; 
+}
+
+.lift-image, .avalanche-image, .snow-report-image {
+  width: 200px;
+}
+
+.weather-image-primary, .weather-image-secondary {
+  width: 150px;
+}
+
+.avalanche-alp {
+  background-color: #ffffff;
+}
+
+.avalanche-tln {
+  background-color: #c8d03c;
+}
+
+.avalanche-btl {
+  background-color: #7c9f69;
+}
+
+.avalanche-th {
+  background-color: black;
+  color: white;
+}
+
+#avalanche-th {
+  border-bottom: 1px solid white
+}
+
+.external-link {
+  height: 1.5em;
 }
