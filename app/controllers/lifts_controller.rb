@@ -1,4 +1,9 @@
 class LiftsController < ApplicationController
+  before_action :authenticate_user!, only: [ :favorite ]
+  before_action :find_lift, only: [ :favorite ]
+  respond_to :js, :json, :html
+
+
   def index
     @lifts = Lift.all
     @blackcomb_lifts = @lifts.slice(0, 15)
@@ -7,6 +12,16 @@ class LiftsController < ApplicationController
     @avalanche = Avalanche.last
   end
 
-  def show
+  def favorite
+    if !current_user.favorited? @lift
+      current_user.favorite @lift
+    elsif current_user.favorited? @lift
+      current_user.remove_favorite @lift
+    end    
+  end
+
+  private
+  def find_lift
+    @lift = Lift.find_by(lift_code: params[:id])
   end
 end

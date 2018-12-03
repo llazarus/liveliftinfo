@@ -1,0 +1,7 @@
+<% if current_user.favorited? @lift %>
+  $(".favorite-btn img:first").css("display", "none");
+  $(".favorite-btn img:nth-child(2)").css("display", "flex");
+<% else %>
+  $(".favorite-btn img:first").css("display", "flex");
+  $(".favorite-btn img:nth-child(2)").css("display", "none");
+<% end %>

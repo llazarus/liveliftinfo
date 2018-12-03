@@ -14,11 +14,20 @@
           <% @blackcomb_lifts.each do |lift| %>
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="heading-<%= lift.lift_code %>-all">
-                <h5 class="panel-title">
-                  <a class="pl-4" role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-lifts-all" href="#collapse-<%= lift.lift_code %>-all" aria-expanded="false" aria-controls="collapse-<%= lift.lift_code %>-all">
-                    <%= lift.name %>
-                  </a>
-                </h5>
+                <div class="row">
+                  <div class="col-8 lift-col mt-1">
+                    <h5 class="panel-title">
+                      <a class="pl-4" role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-lifts-all" href="#collapse-<%= lift.lift_code %>-all" aria-expanded="false" aria-controls="collapse-<%= lift.lift_code %>-all">
+                        <%= lift.name %>
+                      </a>
+                    </h5>
+                  </div>
+                  <div class="col-4 lift-col">
+                    <%= link_to favorite_lift_path(lift.lift_code), class: "favorite-btn", method: :put, remote: :true do %>
+                      <img src="assets/general_icons/favorite.svg" class="favorite-icon">
+                    <% end %>
+                  </div>
+                </div>
               </div>
               <div id="collapse-<%= lift.lift_code %>-all" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= lift.lift_code %>-all">
                 <div class="panel-body">

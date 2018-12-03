@@ -27,13 +27,13 @@ body {
 }
 
 // Position <a> elements w/in. .panel-title
-.panel-title > a {
+.panel-title > a:first-child {
   display: block;
   position: relative;
 }
 
 // Render down-facing FA chevron on closed panels
-.panel-title > a:after {
+.panel-title > a:first-child::after {
   content: "\f078"; 
   font-family: 'FontAwesome';
   position: relative;
@@ -80,4 +80,12 @@ body {
 
 .external-link {
   height: 1.5em;
+}
+
+.favorite-icon {
+  height: 2em;
+}
+
+.favorited {
+    // 
 }
