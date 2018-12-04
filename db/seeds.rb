@@ -119,8 +119,8 @@ Lift.create(
   capacity_hr: "4,200",
   elevation_m: "1,875",
   elevation_i: "6,150",
-  vertical_m: "35",
-  vertical_i: "115",
+  vertical_m: "-",
+  vertical_i: "-",
   alpine: false
 )
 
@@ -306,19 +306,19 @@ Lift.create(
   alpine: false
 )
 
-Lift.create(
-  lift_code: 22,
-  name: "Peak 2 Peak Gondola",
-  time_to_ride: "11",
-  lift_type: "G",
-  capacity: "28",
-  capacity_hr: "4,200",
-  elevation_m: "1,820",
-  elevation_i: "5,970",
-  vertical_m: "35",
-  vertical_i: "115",
-  alpine: false
-)
+# Lift.create(
+#   lift_code: 22,
+#   name: "Peak 2 Peak Gondola",
+#   time_to_ride: "11",
+#   lift_type: "G",
+#   capacity: "28",
+#   capacity_hr: "4,200",
+#   elevation_m: "1,820",
+#   elevation_i: "5,970",
+#   vertical_m: "35",
+#   vertical_i: "115",
+#   alpine: false
+# )
 
 Lift.create(
   lift_code: 39,
@@ -516,10 +516,10 @@ Alert.create(
   name: "Emerald Express"
 )
 
-Alert.create(
-  lift_code: 22,
-  name: "Peak 2 Peak Gondola"
-)
+# Alert.create(
+#   lift_code: 22,
+#   name: "Peak 2 Peak Gondola"
+# )
 
 Alert.create(
   lift_code: 39,

@@ -10,7 +10,7 @@ namespace :reset_day_lifts do
 
       Status.create(lift_code: response_shortcut["liftID"],
                     name: response_shortcut["liftName"],
-                    status: response_shortcut["status"])
+                    status: "X")
       puts "Reset status of #{response_shortcut["liftName"]}!"
     end
     puts "<<< Reset Complete: Lifts >>>"
