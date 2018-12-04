@@ -9,23 +9,19 @@ namespace :update_lifts do
 
     wb_lifts.each do |lift|
       response_shortcut = response["lifts"][lift]
-      code_check = response_shortcut["liftID"]
-      db_query_shortcut = Status.where(:lift_code => code_check).order('created_at DESC').first
-      lift_id = Lift.where(lift_code: response_shortcut["liftID"])
+      db_query_shortcut = Status.where(lift_code: lift)
 
-      if db_query_shortcut == nil
+      if db_query_shortcut == []
         # Persist a new Status object if none already exist for comparison
         Status.create(lift_code: response_shortcut["liftID"],
                       name: response_shortcut["liftName"],
-                      status: response_shortcut["status"],
-                      lift_id: lift_id)
+                      status: response_shortcut["status"])
         puts "Created new lift: #{response_shortcut["liftName"]}!"
       elsif db_query_shortcut.last["status"] != response_shortcut["status"]
         # Persist a new Status object if the given lift's "status" has changed
         Status.create(lift_code: response_shortcut["liftId"],
                     name: response_shortcut["liftName"],
-                    status: response_shortcut["status"],
-                    lift_id: lift_id)
+                    status: response_shortcut["status"])
         puts "Updated lift: #{response_shortcut["liftName"]}!"
       else
         # Do nothing if given lift's "status" value unchanged
