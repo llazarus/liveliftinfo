@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   resources :lifts, only: [ :index ] do
     member do 
-      put 'favorite' => 'lifts#favorite'
-      put 'alert' => 'lifts#alert'
+      put 'favorite' => 'lifts#favorite_lift'
+      put 'alert' => 'lifts#alert_lift'
     end
   end
 

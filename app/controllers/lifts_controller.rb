@@ -1,6 +1,7 @@
 class LiftsController < ApplicationController
-  before_action :authenticate_user!, only: [ :favorite ]
-  before_action :find_lift, only: [ :favorite ]
+  before_action :authenticate_user!, only: [ :favorite_lift, :alert_lift ]
+  before_action :find_lift, only: [ :favorite_lift ]
+  before_action :find_alert, only: [ :alert_lift ]
   respond_to :js, :json, :html
 
 
@@ -12,7 +13,7 @@ class LiftsController < ApplicationController
     @avalanche = Avalanche.last
   end
 
-  def favorite
+  def favorite_lift
     if !current_user.favorited? @lift
       current_user.favorite @lift
     elsif current_user.favorited? @lift
@@ -20,8 +21,20 @@ class LiftsController < ApplicationController
     end    
   end
 
+  def alert_lift
+    if !current_user.favorited? @alert
+      current_user.favorite @alert
+    elsif current_user.favorited? @alert
+      current_user.remove_favorite @alert
+    end    
+  end
+
   private
   def find_lift
-    @lift = Lift.find_by(lift_code: params[:id])
+    @lift = Lift.find_by(id: params[:id])
+  end
+
+  def find_alert
+    @alert = Alert.find_by(id: params[:id])
   end
 end

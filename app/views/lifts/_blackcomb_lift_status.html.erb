@@ -23,8 +23,11 @@
                     </h5>
                   </div>
                   <div class="col-4 lift-col">
-                    <%= link_to favorite_lift_path(lift.lift_code), class: "favorite-btn", method: :put, remote: :true do %>
+                    <%= link_to favorite_lift_path(lift), class: "favorite-btn", method: :put, remote: :true do %>
                       <img src="assets/general_icons/favorite.svg" class="favorite-icon">
+                    <% end %>
+                    <%= link_to alert_lift_path(lift), class: "favorite-btn", method: :put, remote: :true do %>
+                      <img src="assets/general_icons/alert_null.png" class="alert-icon">
                     <% end %>
                   </div>
                 </div>
