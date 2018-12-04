@@ -23,6 +23,7 @@
                     </h5>
                   </div>
                   <div class="col-4 lift-col">
+                    <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status">
                     <%= link_to favorite_lift_path(lift.lift_code), class: "favorite-btn", method: :put, remote: :true do %>
                       <img src="assets/general_icons/favorite.svg" class="favorite-icon">
                     <% end %>

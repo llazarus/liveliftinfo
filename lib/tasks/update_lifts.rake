@@ -20,7 +20,7 @@ namespace :update_lifts do
         puts "Created new lift: #{response_shortcut["liftName"]}!"
       elsif code_check == 22 || db_query_shortcut.last["status"] != response_shortcut["status"]
         # Persist a new Status object if the given lift's "status" has changed. Always update P2P Gondola (code_check == 22) to avoid edge case where second station will otherwise not update.
-        Status.create(lift_code: response_shortcut["liftId"],
+        Status.create(lift_code: response_shortcut["liftID"],
                     name: response_shortcut["liftName"],
                     status: response_shortcut["status"])
         puts "Updated lift: #{response_shortcut["liftName"]}!"

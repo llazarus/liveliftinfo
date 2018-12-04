@@ -2,7 +2,15 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def retrieve_lift_status(lift) 
-    Status.where(lift_code: lift.lift_code).last.status
+    status = Status.where(lift_code: lift.lift_code).last.status.upcase
+
+    if status == "O"
+      "/assets/status_icons/open.png"
+    elsif status == "H"
+      "/assets/status_icons/hold.png"
+    else
+      "/assets/status_icons/closed.png"
+    end
   end
   helper_method :retrieve_lift_status
 
