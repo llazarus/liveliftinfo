@@ -405,3 +405,150 @@ Lift.create(
 )
 
 puts "Lift table created and filled with static values!"
+
+Alert.create(
+  lift_code: 69,
+  name: "Blackcomb Gondola Lower"
+)
+
+Alert.create(
+  lift_code: 70,
+  name: "Blackcomb Gondola Mid"
+)
+
+Alert.create(
+  lift_code: 5,
+  name: "Excalibur Gondola Lower"
+)
+
+Alert.create(
+  lift_code: 71,
+  name: "Excalibur Gondola Mid"
+)
+
+Alert.create(
+  lift_code: 8,
+  name: "Excelerator Express"
+)
+
+Alert.create(
+  lift_code: 6,
+  name: "Magic Chair"
+)
+
+Alert.create(
+  lift_code: 4,
+  name: "Jersey Cream Express"
+)
+
+Alert.create(
+  lift_code: 9,
+  name: "Catskinner Express"
+)
+
+Alert.create(
+  lift_code: 22,
+  name: "Peak 2 Peak Gondola"
+)
+
+Alert.create(
+  lift_code: 10,
+  name: "Crystal Ridge Express"
+)
+
+Alert.create(
+  lift_code: 7,
+  name: "Glacier Express"
+)
+
+Alert.create(
+  lift_code: 3,
+  name: "7th Heaven Express"
+)
+
+Alert.create(
+  lift_code: 12,
+  name: "Showcase T-Bar"
+)
+
+Alert.create(
+  lift_code: 11,
+  name: "Horstman T-Bar"
+)
+
+Alert.create(
+  lift_code: 14,
+  name: "Tube Park"
+)
+
+Alert.create(
+  lift_code: 33,
+  name: "Whistler Village Gondola Lower"
+)
+
+Alert.create(
+  lift_code: 72,
+  name: "Whistler Village Gondola Mid"
+)
+
+Alert.create(
+  lift_code: 45,
+  name: "Fitzsimmons Express"
+)
+
+Alert.create(
+  lift_code: 40,
+  name: "Garbanzo Express"
+)
+
+Alert.create(
+  lift_code: 34,
+  name: "Creekside Gondola"
+)
+
+Alert.create(
+  lift_code: 36,
+  name: "Big Red Express"
+)
+
+Alert.create(
+  lift_code: 35,
+  name: "Emerald Express"
+)
+
+Alert.create(
+  lift_code: 22,
+  name: "Peak 2 Peak Gondola"
+)
+
+Alert.create(
+  lift_code: 39,
+  name: "Olympic Chair"
+)
+
+Alert.create(
+  lift_code: 44,
+  name: "Franz's Chair"
+)
+
+Alert.create(
+  lift_code: 43,
+  name: "Peak Express"
+)
+
+Alert.create(
+  lift_code: 37,
+  name: "Harmony 6 Express"
+)
+
+Alert.create(
+  lift_code: 42,
+  name: "Symphony Express"
+)
+
+Alert.create(
+  lift_code: 41,
+  name: "T-Bars"
+)
+
+puts "Alert table created and filled with static values!"

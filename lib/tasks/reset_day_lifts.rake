@@ -3,14 +3,18 @@ namespace :reset_day_lifts do
   task reset_day_lifts: :environment do
     puts "<<< Contacting API: Lifts (Daily Reset) >>>"
     response = HTTParty.get("http://www.epicmix.com/vailresorts/sites/epicmix/api/mobile/lifts.ashx")
-
+    
     wb_lifts = Array(244..272)
     wb_lifts.each do |lift|
+      response_shortcut = response["lifts"][lift]
+      lift_id = Lift.where(lift_code: response_shortcut["liftID"])
+
       response_shortcut = response["lifts"][lift]
 
       Status.create(lift_code: response_shortcut["liftID"],
                     name: response_shortcut["liftName"],
-                    status: response_shortcut["status"])
+                    status: response_shortcut["status"],
+                    lift_id: lift_id)
       puts "Reset status of #{response_shortcut["liftName"]}!"
     end
     puts "<<< Reset Complete: Lifts >>>"

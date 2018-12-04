@@ -1,6 +1,7 @@
 class LiftsController < ApplicationController
-  before_action :authenticate_user!, only: [ :favorite ]
-  before_action :find_lift, only: [ :favorite ]
+  before_action :authenticate_user!, except: [ :index ]
+  before_action :find_favorite, only: [ :favorite ]
+  before_action :find_alert, only: [ :alert ]
   respond_to :js, :json, :html
 
 
@@ -20,8 +21,20 @@ class LiftsController < ApplicationController
     end    
   end
 
+  def alert
+    if !current_user.favorited? @alert
+      current_user.favorite @alert
+    else
+      current_user.remove_favorite @alert
+    end 
+  end
+
   private
-  def find_lift
+  def find_favorite
     @lift = Lift.find_by(lift_code: params[:id])
+  end
+
+  def find_alert
+    @alert = Alert.find_by(lift_code: params[:id])
   end
 end
