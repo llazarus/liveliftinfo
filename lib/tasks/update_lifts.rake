@@ -9,7 +9,8 @@ namespace :update_lifts do
 
     wb_lifts.each do |lift|
       response_shortcut = response["lifts"][lift]
-      db_query_shortcut = Status.where(lift_code: lift)
+      code_check = response_shortcut["liftID"]
+      db_query_shortcut = Status.where(lift_code: code_check)
 
       if db_query_shortcut == []
         # Persist a new Status object if none already exist for comparison
