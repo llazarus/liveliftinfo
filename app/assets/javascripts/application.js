@@ -22,7 +22,7 @@ $(document).ready(function() {
     $(this).toggleClass('no-favorite favorite')
   });
   $('.btn.btn-danger').click(function() {
-    $(this).toggleClass('no-alert alert')
+    $(this).toggleClass('no-alert alerted')
   });
 });
 
