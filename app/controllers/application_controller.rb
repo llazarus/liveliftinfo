@@ -71,6 +71,19 @@ class ApplicationController < ActionController::Base
   end
   helper_method :retrieve_weather_image
 
+  def favorite_exists(lift_id, id)
+    f = Favorite.where({favoritable_type: "Lift", favoritable_id: lift_id, favoritor_id: id })
+    f.length > 0 ? true : false
+  end
+  helper_method :favorite_exists
+
+  def alert_exists(lift_id, id)
+    a = Favorite.where({favoritable_type: "Alert", favoritable_id: lift_id, favoritor_id: id })
+    a.length > 0 ? true : false
+  end
+  helper_method :alert_exists
+
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:phone])

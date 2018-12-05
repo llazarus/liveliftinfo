@@ -1,6 +1,6 @@
-<div class="panel-group" id="accordion-whistler-all" role="tablist" aria-multiselectable="true">
+<div class="panel-group mr-3" id="accordion-whistler-all" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="heading-whistler-all">
+    <div class="panel-heading p-1" role="tab" id="heading-whistler-all">
       <h4 class="panel-title">
         <a class="pl-3" role="button" data-toggle="collapse" data-parent="#accordion-whistler-all" href="#collapse-whistler-all" aria-expanded="true" aria-controls="collapse-whistler-all">
           Whistler Mountain
@@ -12,7 +12,7 @@
         <div class="panel-group" id="accordion-whistler-lifts-all" role="tablist" aria-multiselectable="true">
           <!-- Render a panel for each whistler list -->
           <% @whistler_lifts.each do |lift| %>
-            <div class="panel panel-default">
+            <div class="panel panel-default p-1 border-top">
               <div class="panel-heading" role="tab" id="heading-<%= lift.lift_code %>-all">
                 <div class="row">
                   <div class="col-8 lift-col mt-1">
@@ -24,12 +24,37 @@
                   </div>
                   <div class="col-4 lift-col">
                     <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status">
-                    <%= link_to favorite_lift_path(lift.lift_code), class: "favorite-btn", method: :put, remote: :true do %>
-                      <img src="assets/general_icons/favorite_null.svg" class="favorite-icon">
+                    <% if user_signed_in? %>
+                      <% if favorite_exists(lift.id, current_user.id) %>
+                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning favorite", method: :put, remote: :true do %>
+                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon">
+                        <% end %>
+                      <% else %>
+                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning no-favorite", method: :put, remote: :true do %>
+                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon">
+                        <% end %>
+                      <% end %>
+                      
+                      <% if alert_exists(lift.id, current_user.id) %>
+                        <%= link_to alert_lift_path(lift), class: "btn btn-danger alerted", method: :put, remote: :true do %>
+                          <img src="assets/general_icons/alert_null.svg" class="alert-icon">
+                        <% end %>
+                      <% else %>
+                        <%= link_to alert_lift_path(lift), class: "btn btn-danger no-alert", method: :put, remote: :true do %>
+                          <img src="assets/general_icons/alert_null.svg" class="alert-icon">
+                        <% end %>
+                      <% end %>
+                    <% else %>
+                      <a href="#" class="btn btn-outline-warning disabled no-favorite">
+                        <img src="assets/general_icons/favorite_null.svg" class="favorite-icon">
+                      </a>
+                      <a href="#" class="btn btn-outline-danger disabled">
+                        <img src="assets/general_icons/alert_null.svg" class="alert-icon">
+                      </a>
                     <% end %>
-                    <%= link_to alert_lift_path(lift), class: "favorite-btn", method: :put, remote: :true do %>
-                      <img src="assets/general_icons/alert_null.svg" class="alert-icon">
-                    <% end %>
+
+
+
                   </div>  
                 </div>
               </div>

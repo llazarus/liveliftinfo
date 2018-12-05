@@ -29,5 +29,8 @@ module LiveLiftInfo
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Configure ActiveJob to use DelayedJob
+    config.active_job.queue_adapter = :delayed_job
   end
 end

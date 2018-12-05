@@ -47,7 +47,7 @@ gem 'pry-rails'
 gem 'phonelib'
 gem 'simple_form'
 gem 'acts_as_favoritor'
-# gem 'delayed_job_active_record'
+gem 'delayed_job_active_record'
 # gem 'delayed_job_web'
 
 group :development, :test do

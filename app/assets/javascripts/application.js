@@ -16,3 +16,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+$(document).ready(function() {
+  $('.btn.btn-warning').click(function() {
+    $(this).toggleClass('no-favorite favorite')
+  });
+  $('.btn.btn-danger').click(function() {
+    $(this).toggleClass('no-alert alert')
+  });
+});
+
