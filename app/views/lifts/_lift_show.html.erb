@@ -1,26 +1,34 @@
 <div class="container mt-2 lift-show border rounded">
+
   <div class="row p-3 justify-content-between">
-    <div class="col border border-dark rounded lift-image">
-      <img src="<%= retrieve_lift_image(lift.lift_type) %>" class="lift-image">
+    <div class="col-4 border border-dark rounded lift-image">
+      <img src="<%= retrieve_lift_image(lift.lift_type) %>" class="lift-image h-100 img-fluid mx-auto d-block">
     </div>
-    <div class="col">
-      <div class="row">
-        Lift Capacity: <%= lift.capacity %> people
-      </div>
-      <div class="row">
-        Upload Capacity: <%= lift.capacity_hr %> people/hr.
-      </div>
-      <div class="row">
-        Time to Ride: <%= lift.time_to_ride %> min.
-      </div>
-    </div>
-    <div class="col">
-      <div class="row">
-        Lift Base Elevation: <%= lift.elevation_i %> ft.
-      </div>
-      <div class="row">
-        Vertical: <%= lift.vertical_i %> ft.
-      </div>
+    <div class="col-8">
+      <table class="table table-sm table-borderless">
+        <tbody>
+          <tr>
+            <td class="font-weight-bold">Lift Capacity:</td>
+            <td><%= lift.capacity %> people</td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">Upload Capacity:</td>
+            <td><%= lift.capacity_hr %> people/hr.</td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">Time to Ride:</td>
+            <td><%= lift.time_to_ride %> min.</td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">Lift Base Elevation:</td>
+            <td><%= lift.elevation_i %> ft.</td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">Vertical:</td>
+            <td><%= lift.vertical_i %> ft.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -28,27 +36,51 @@
     <table class="table table-sm table-borderless mb-0">
       <thead>
         <tr>
-          <th scope="row">
-            New Snow
+          <th scope="col" colspan="2" class="status-th border-bottom ">
+            New Snow:
           </th>
         </tr>
         <tr>
-          <td>24 Hours: </td>
-          <td>48 Hours: </td>
-          <td>Past Week: </td>
+          <td scope="col" colspan="2" class="status-bg">
+            <div class="row justify-content-around">
+            <span>
+              <strong>24 Hours:</strong> <%= @weather.new_snow_i %> in. 
+            </span>
+            <span>
+              <strong>48 Hours:</strong> <%= @weather.two_days_i %> in.
+            </span>
+            <span>
+              <strong>Past Week:</strong> <%= @weather.seven_days_i %> in.
+            </span>
+            </div>
+          </td>
+        </tr>
+      </thead>
+      
+      <thead>
+        <tr>
+          <th scope="col" colspan="2" class="status-th border-bottom">
+            Lift History:
+          </th>
         </tr>
       </thead>
 
-      <% 7.times do |day| %>
+      <% 6.times do |day| %>
         <tbody>
           <tr>
-            <th scope="row">Day</th>
-            <td>
-              Open?
-            </td>
-            <td>
-              Closed?
-            </td>
+            <th scope="row" class="status-bg border-bottom">
+              <%= (Date.today - day + 1).strftime("%B %d, %Y") %>
+            </th>
+
+            <% if @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today-day+1), lift.lift_code, "O"]) != [] %>
+              <td scope="col" colspan="2" class="status-open border-bottom">
+                Opened at <%= @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today-day+1), lift.lift_code, "O"]).first.created_at.strftime("%l:%M %p") %>
+              </td>
+            <% else %>
+              <td scope="col" colspan="2" class="status-closed border-bottom">
+                Chair Closed
+              </td>
+            <% end %>
           </tr>
         </tbody>
       <% end %>

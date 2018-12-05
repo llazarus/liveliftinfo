@@ -23,7 +23,12 @@ set :environment, "development"
 
 # # Default lift status to "X" at the beginning and end of each day
 # every 1.day, at: ['12:05 am', '11:55 pm'] do
-#   rake "reset_lifts:reset_lifts"
+#   rake "reset_day_lifts:reset_day_lifts"
+# end
+
+# # Delete_all Favorites with favoritable_type = "Alert" at the end of each day
+# every 1.day, at ['11:55 pm'] do
+#   rake "reset_day_alerts:reset_day_alerts"
 # end
 
 # # Update AC Forecast every day at 06:00

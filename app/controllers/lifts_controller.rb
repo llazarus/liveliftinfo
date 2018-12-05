@@ -11,6 +11,7 @@ class LiftsController < ApplicationController
     @whistler_lifts = @lifts.drop(15)
     @weather = Forecast.last
     @avalanche = Avalanche.last
+    @history = Status.where("created_at::date > ?", (Date.today - 7))
   end
 
   def favorite_lift

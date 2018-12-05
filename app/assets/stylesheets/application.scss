@@ -49,9 +49,9 @@ body {
   content: "\f077"; 
 }
 
-.lift-image {
-  width: 8em;
-}
+// .lift-image {
+//   width: 8em;
+// }
 
 .avalanche-image, .snow-report-image {
   width: 200px;
@@ -73,13 +73,21 @@ body {
   background-color: #7c9f69;
 }
 
-.avalanche-th {
+.avalanche-th, .status-th {
   background-color: black;
   color: white;
 }
 
-#avalanche-th {
-  border-bottom: 1px solid white
+.status-bg {
+  background-color: white;
+}
+
+.status-open {
+  background-color: #82c17b;
+}
+
+.status-closed {
+  background-color: #d75753;
 }
 
 .external-link {

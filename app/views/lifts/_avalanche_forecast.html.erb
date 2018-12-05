@@ -32,21 +32,18 @@
     <table class="table table-sm">
       <thead>
         <tr>
-          <th scope="col" class="avalanche-th" id="avalanche-th" colspan="2">
+          <th scope="col" class="avalanche-th" colspan="2">
             Danger Ratings:
           </th>
         </tr>
       </thead>
 
       <% 3.times do |day| %>
-        <thead>
-          <tr>
-            <th scope="col" class="avalanche-th" colspan="2">
-              <%= string_to_date(@avalanche.danger_ratings[day]["date"]) %>
-            </th>
-          </tr>
-        </thead>
-      
+        <tr>
+          <th scope="col" class="avalanche-th" colspan="2">
+            <%= string_to_date(@avalanche.danger_ratings[day]["date"]) %>
+          </th>
+        </tr>      
         <tbody>
           <tr>
             <th scope="row" class="avalanche-alp">Alpine</th>

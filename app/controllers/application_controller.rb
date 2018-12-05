@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
     elsif danger_rating == "4"
       "background-color: #d65345"
     else
-      "background-color: ##000000"
+      "background-color: #000000"
     end
   end
   helper_method :avalanche_background_color
@@ -82,7 +82,6 @@ class ApplicationController < ActionController::Base
     a.length > 0 ? true : false
   end
   helper_method :alert_exists
-
 
   protected
   def configure_permitted_parameters

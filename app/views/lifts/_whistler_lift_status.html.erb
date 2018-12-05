@@ -23,33 +23,33 @@
                     </h5>
                   </div>
                   <div class="col-4 lift-col">
-                    <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status">
+                    <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status img-fluid">
                     <% if user_signed_in? %>
                       <% if favorite_exists(lift.id, current_user.id) %>
                         <%= link_to favorite_lift_path(lift), class: "btn btn-warning favorite", method: :put, remote: :true do %>
-                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon">
+                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
                         <% end %>
                       <% else %>
                         <%= link_to favorite_lift_path(lift), class: "btn btn-warning no-favorite", method: :put, remote: :true do %>
-                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon">
+                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
                         <% end %>
                       <% end %>
                       
                       <% if alert_exists(lift.id, current_user.id) %>
                         <%= link_to alert_lift_path(lift), class: "btn btn-danger alerted", method: :put, remote: :true do %>
-                          <img src="assets/general_icons/alert_null.svg" class="alert-icon">
+                          <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
                         <% end %>
                       <% else %>
                         <%= link_to alert_lift_path(lift), class: "btn btn-danger no-alert", method: :put, remote: :true do %>
-                          <img src="assets/general_icons/alert_null.svg" class="alert-icon">
+                          <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
                         <% end %>
                       <% end %>
                     <% else %>
                       <a href="#" class="btn btn-outline-warning disabled no-favorite">
-                        <img src="assets/general_icons/favorite_null.svg" class="favorite-icon">
+                        <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
                       </a>
                       <a href="#" class="btn btn-outline-danger disabled">
-                        <img src="assets/general_icons/alert_null.svg" class="alert-icon">
+                        <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
                       </a>
                     <% end %>
 
