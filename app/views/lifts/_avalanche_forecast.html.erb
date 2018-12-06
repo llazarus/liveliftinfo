@@ -27,7 +27,7 @@
           </tr>
           <tr>
             <td class="font-weight-bold">Report Confidence:</td>
-            <td><%= @avalanche.confidence %></td>
+            <td><%= @avalanche.confidence.chomp(" - ") %></td>
           </tr>
         </tbody>
       </table>
@@ -78,7 +78,5 @@
   <div class="row align-items-center justify-content-center pb-3">
     <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-2">
     <%= link_to "Full Avalanche Canada Forecast", "https://www.avalanche.ca/forecasts/sea-to-sky", target: :_blank %>
-    <span>
-    </span>
   </div>
 </div>

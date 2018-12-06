@@ -1,7 +1,7 @@
 namespace :update_forecast do
   desc "GET request to API. Persist new object in Forecast table"
   task update_forecast: :environment do
-    puts "<<< Contacting API: Weather Forecast >>>"
+    puts "<<< Contacting API: Weather Forecast At #{Time.now.strftime("%H:%M:%S")} >>>"
     response = HTTParty.get("http://www.epicmix.com/vailresorts/sites/epicmix/api/mobile/weather.ashx")
     
     response_shortcut = response["snowconditions"][10]

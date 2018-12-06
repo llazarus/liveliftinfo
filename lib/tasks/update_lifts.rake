@@ -1,7 +1,7 @@
 namespace :update_lifts do
   desc "GET request to API. Persist in Statuses table if lift status has changed since the last API call"
   task update_lifts: :environment do
-    puts "<<< Contacting API: Lifts >>>"
+    puts "<<< Contacting API: Lifts At #{Time.now.strftime("%H:%M:%S")} >>>"
     response = HTTParty.get("http://www.epicmix.com/vailresorts/sites/epicmix/api/mobile/lifts.ashx")
 
     # wb_lifts is an array containing all relevant indexes of the returned "lifts" object
