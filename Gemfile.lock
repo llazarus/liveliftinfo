@@ -68,7 +68,6 @@ GEM
       sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.2)
-    cancancan (2.3.0)
     chronic (0.10.2)
     coderay (1.1.2)
     coffee-rails (4.2.2)
@@ -237,7 +236,6 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap
   byebug
-  cancancan
   coffee-rails (~> 4.2)
   delayed_job_active_record
   devise

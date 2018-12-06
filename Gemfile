@@ -36,7 +36,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Added Gems:
 gem 'devise'
-gem 'cancancan'
 gem 'whenever'
 gem 'httparty'
 gem 'aws-sdk-sns'
