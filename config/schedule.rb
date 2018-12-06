@@ -7,10 +7,12 @@
 #  
 ### WHENEVER YOU ADD A JOB, IN TERMINAL RUN: "whenever --update-crontab" ###
 
-# Set output of dev environment cron logs to "/Users/llazarus/Desktop/whenever_cron_log_d"
+# Set output of dev environment cron logs to "~/Users/MyAccount/Desktop/whenever_cron_log_d"
 set :output, "~/Desktop/whenever_cron_log_d/mail.log"
 # Set environment to development, CHANGE FOR PRODUCTION
 set :environment, "development"
+
+# UNCOMMENT BELOW THIS LINE!!!
 
 # # Update lifts every minute between the hours of 06:00 and 18:00
 # every 1.minute do
