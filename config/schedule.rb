@@ -29,7 +29,7 @@ every 1.day, at: ['12:05 am', '11:55 pm'] do
 end
 
 # Delete_all Favorites with favoritable_type = "Alert" at the end of each day
-every 1.day, at '11:55 pm' do
+every 1.day, at: '11:55 pm' do
   rake "reset_day_alerts:reset_day_alerts"
 end
 
