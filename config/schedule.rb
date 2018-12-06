@@ -14,31 +14,31 @@ set :environment, "development"
 
 # UNCOMMENT BELOW THIS LINE!!!
 
-# # Update lifts every minute between the hours of 06:00 and 18:00
-# every 1.minute do
-#   time = Time.now.strftime("%H:%M:%S")
+# Update lifts every minute between the hours of 06:00 and 18:00
+every 1.minute do
+  time = Time.now.strftime("%H:%M:%S")
 
-#   if time > "05:59:00" && time < "18:30:00"
-#     rake "update_lifts:update_lifts"
-#   end
-# end
+  if time > "05:59:00" && time < "18:30:00"
+    rake "update_lifts:update_lifts"
+  end
+end
 
-# # Default lift status to "X" at the beginning and end of each day
-# every 1.day, at: ['12:05 am', '11:55 pm'] do
-#   rake "reset_day_lifts:reset_day_lifts"
-# end
+# Default lift status to "X" at the beginning and end of each day
+every 1.day, at: ['12:05 am', '11:55 pm'] do
+  rake "reset_day_lifts:reset_day_lifts"
+end
 
-# # Delete_all Favorites with favoritable_type = "Alert" at the end of each day
-# every 1.day, at ['11:55 pm'] do
-#   rake "reset_day_alerts:reset_day_alerts"
-# end
+# Delete_all Favorites with favoritable_type = "Alert" at the end of each day
+every 1.day, at '11:55 pm' do
+  rake "reset_day_alerts:reset_day_alerts"
+end
 
-# # Update AC Forecast every day at 06:00
-# every 1.day, at: '6:00 am' do
-#   rake "update_avalanche:update_avalanche"
-# end
+# Update AC Forecast every day at 06:00
+every 1.day, at: '6:00 am' do
+  rake "update_avalanche:update_avalanche"
+end
 
-# # Update Weather Forecast every 2 hours
-# every 2.hours do
-#   rake "update_forecast:update_forecast"
-# end
+# Update Weather Forecast every 2 hours
+every 2.hours do
+  rake "update_forecast:update_forecast"
+end
