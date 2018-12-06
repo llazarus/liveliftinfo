@@ -1,74 +1,32 @@
 <div class="container">
-  <div class="row">
-    <h4>Snow Report</h4>
-  </div>
-  <div class="row">
-    <div class="col">
-      <img src="/assets/general_icons/snow_icon.svg" alt="snow report image" class="snow-report-image">
-    </div>
-    <div class="col">
-      <div class="row">
-        New Snow: <%= @weather.new_snow_i %> in.
-      </div>
-      <div class="row">
-        Snow (Two Days): <%= @weather.two_days_i %> in.
-      </div>
-      <div class="row">
-        Snow (Seven Days): <%= @weather.seven_days_i %> in.
-      </div>
-      <div class="row">
-        Mid-mtn. Snowpack: <%= @weather.snowpack_i %> in.
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <h4>Daily Forecasts</h4>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <img src="<%=retrieve_weather_image(@weather.forecast[0]["iconName"]) %>" alt="weather icon" class="weather-image-primary">
-    </div>
-    <div class="col">
-      <div class="row">
-        <%= @weather.forecast[0]["dayDescription"] %>
-      </div>
-      <div class="row">
-        Description: <%= @weather.forecast[0]["summaryDescription"] %>
-      </div>
-      <div class="row">
-        High: <%= @weather.forecast[0]["temperatureHigh"] %> f.
-      </div>
-      <div class="row">
-        Low: <%= @weather.forecast[0]["temperatureLow"] %> f.
-      </div>
-    </div>
-  </div>
-
-  <% 5.times do |day| %>
-    <div class="row">
-      <div class="col">
-        <img src="<%= retrieve_weather_image(@weather.forecast[day+1]["iconName"]) %>" class="weather-image-secondary">
-      </div>
-      <div class="col">
-        <div class="row">
-          <%= @weather.forecast[day+1]["dayDescription"] %>
+  <div class="row justify-content-around">
+    <% 6.times do |day| %>
+      <div class="col-3 m-4">
+        <div class="row font-weight-bold justify-content-center mb-1">
+          <%= @weather.forecast[day]["dayDescription"] %>
         </div>
-        <div class="row">
-          Description: <%= @weather.forecast[day+1]["summaryDescription"] %>
+        <div class="col border border-dark rounded weather-image mb-1">
+          <img src="<%= retrieve_weather_image(@weather.forecast[day]["iconName"]) %>" class="weather-image h-90 img-fluid mx-auto d-block p-3">
         </div>
-        <div class="row">
-          High: <%= @weather.forecast[day+1]["temperatureHigh"] %> f.
-        </div>
-        <div class="row">
-          Low: <%= @weather.forecast[day+1]["temperatureLow"] %> f.
+        <div class="col">
+          <div class="row">
+            Description: <%= @weather.forecast[day]["summaryDescription"] %>
+          </div>
+          <div class="row">
+            High: <%= @weather.forecast[day]["temperatureHigh"] %> f.
+          </div>
+          <div class="row">
+            Low: <%= @weather.forecast[day]["temperatureLow"] %> f.
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
-  <div class="row">
-    EXTERNAL LINK(S) HERE!
+  <div class="row align-items-center justify-content-center pb-3">
+    <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-2">
+    <%= link_to "Full Weather Forecast", "https://www.whistlerblackcomb.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx", target: :_blank %>
+    <span>
+    </span>
   </div>
 </div>
