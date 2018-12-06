@@ -19,10 +19,10 @@
 
 $(document).ready(function() {
   $('.btn.btn-warning').click(function() {
-    $(this).toggleClass('no-favorite favorite')
+    $(this).toggleClass('no-favorite favorite');
   });
   $('.btn.btn-danger').click(function() {
-    $(this).toggleClass('no-alert alerted')
+    $(this).toggleClass('no-alert alerted');
   });
 });
 

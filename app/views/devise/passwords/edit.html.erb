@@ -1,4 +1,4 @@
-<h2>Change Your Password</h2>
+<h2 class="mt-2">Change Your Password</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
 
@@ -16,7 +16,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "btn btn-outline-dark" %>
   </div>
 <% end %>
 
