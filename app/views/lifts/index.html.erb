@@ -1,9 +1,16 @@
 <div>
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#all-content" aria-controls="home" role="tab" data-toggle="tab">All Content</a></li>
-    <li role="presentation"><a href="#favorites" aria-controls="profile" role="tab" data-toggle="tab">Favorites</a></li>
-  </ul>
+  <nav class="mt-2">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-all-content-tab" data-toggle="tab" href="#all-content" role="tab" aria-controls="nav-home" aria-selected="true">All Content</a>
+      <% if user_signed_in? %>
+        <a class="nav-item nav-link" id="nav-favorites-tab" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false">Favorite Lifts</a>
+      <% else %>
+        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" data-placement="right" title="Sign in to create favorites!">
+          <a class="nav-item nav-link disabled" id="nav-favorites-tab" data-toggle="tab" href="#" role="tab" aria-controls="no-user" aria-selected="false">Favorite Lifts</a>
+        </span>
+      <% end %>
+    </div>
+</nav>
 
   <!-- Tab panes -->
   <div class="tab-content">
@@ -87,59 +94,54 @@
       </div>
     </div>
 
-    <% if user_signed_in? %>
-      <!-- #favorites tab -->
-      <div role="tabpanel" class="tab-pane fade" id="favorites">
+    <!-- #favorites tab -->
+    <div role="tabpanel" class="tab-pane fade" id="favorites">
 
-        <% if @favorites != []%>
-          <!-- Collapse panel -->
-          <div class="panel-group mb-3" id="accordion-all" role="tablist" aria-multiselectable="true">
+      <% if @favorites != []%>
+        <!-- Collapse panel -->
+        <div class="panel-group mb-3" id="accordion-all" role="tablist" aria-multiselectable="true">
 
-            <!-- Favorite Lifts panel -->
-            <div class="panel panel-default border">
-              <div class="panel-heading border-bottom p-1" role="tab" id="heading-lifts-all">
-                <h2 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-lifts-all" aria-expanded="true" aria-controls="collapse-lifts-all">
-                    Favorite Lifts
-                  </a>
-                </h2>
-              </div>
-              <div id="collapse-lifts-all" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="heading-lifts-all">
-                <div class="row">
-                  <div class="col-6">
-                    <%# Render all Blackcomb lifts %>
-                    <%= render "blackcomb_favorites" %>
-                  </div>
-                  <div class="col-6">
-                    <%# Render all Whistler lifts %>
-                    <%= render "whistler_favorites" %>
-                  </div>
+          <!-- Favorite Lifts panel -->
+          <div class="panel panel-default border">
+            <div class="panel-heading border-bottom p-1" role="tab" id="heading-lifts-all">
+              <h2 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-lifts-all" aria-expanded="true" aria-controls="collapse-lifts-all">
+                  Favorite Lifts
+                </a>
+              </h2>
+            </div>
+            <div id="collapse-lifts-all" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="heading-lifts-all">
+              <div class="row">
+                <div class="col-6">
+                  <%# Render all Blackcomb lifts %>
+                  <%= render "blackcomb_favorites" %>
+                </div>
+                <div class="col-6">
+                  <%# Render all Whistler lifts %>
+                  <%= render "whistler_favorites" %>
                 </div>
               </div>
             </div>
-
           </div>
-        <% else %>
-          <div class="container-fluid p-4" id="no-user-favorites">
-            <h3>
-              You haven't added any favorites yet! <br><br>
-              Press the star button to add/remove a favorite  
-              <a href="#" class="btn btn-lg btn-warning favorite ml-2">
-                <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
-              </a>
-              <br><br>
-              Press the bell button to add/remove a SMS alert
-              <a href="#" class="btn btn-lg btn-danger alerted ml-2">
-                <img src="assets/general_icons/alert_null.svg" class="favorite-icon img-fluid">
-              </a>
-            </h3>
-          </div>
-        <% end %>
-      </div>
-    <% else %>
-      Sign up ya droofus!
-    <% end %>
 
+        </div>
+      <% else %>
+        <div class="container-fluid p-4" id="no-user-favorites">
+          <h3>
+            You haven't added any favorites yet! <br><br>
+            Press the star button to add/remove a favorite  
+            <a href="#" class="btn btn-lg btn-warning favorite ml-2">
+              <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+            </a>
+            <br><br>
+            Press the bell button to add/remove a SMS alert
+            <a href="#" class="btn btn-lg btn-danger alerted ml-2">
+              <img src="assets/general_icons/alert_null.svg" class="favorite-icon img-fluid">
+            </a>
+          </h3>
+        </div>
+      <% end %>
+    </div>
   </div>
 
 </div>
