@@ -1,0 +1,72 @@
+<div class="panel-group mr-auto" id="accordion-blackcomb-all" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading p-1" role="tab" id="heading-blackcomb-all">
+      <h4 class="panel-title">
+        <a class="pl-3" role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-all" href="#collapse-blackcomb-all" aria-expanded="true" aria-controls="collapse-blackcomb-all">
+          Blackcomb Mountain
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-blackcomb-all" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="heading-blackcomb-all">
+      <div class="panel-body">
+        <div class="panel-group pl-2" id="accordion-blackcomb-lifts-all" role="tablist" aria-multiselectable="true">
+          <!-- Render a panel for each Blackcomb list -->
+          <% @blackcomb_lifts.each do |lift| %>
+          <% if favorite_exists(lift.id, current_user.id) %>
+            <div class="panel panel-default p-1 border-top">
+              <div class="panel-heading" role="tab" id="heading-<%= lift.lift_code %>-all">
+                <div class="row">
+                  <div class="col-8 lift-col mt-1">
+                    <h5 class="panel-title">
+                      <a class="pl-4" role="button" data-toggle="collapse" data-parent="#accordion-blackcomb-lifts-all" href="#collapse-<%= lift.lift_code %>-all" aria-expanded="false" aria-controls="collapse-<%= lift.lift_code %>-all">
+                        <%= lift.name %>
+                      </a>
+                    </h5>
+                  </div>
+                  <div class="col-4 lift-col">
+                    <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status">
+                    <% if user_signed_in? %>
+                      <% if favorite_exists(lift.id, current_user.id) %>
+                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning favorite", method: :put, remote: :true do %>
+                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+                        <% end %>
+                      <% else %>
+                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning no-favorite", method: :put, remote: :true do %>
+                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+                        <% end %>
+                      <% end %>
+                      
+                      <% if alert_exists(lift.id, current_user.id) %>
+                        <%= link_to alert_lift_path(lift), class: "btn btn-danger alerted", method: :put, remote: :true do %>
+                          <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
+                        <% end %>
+                      <% else %>
+                        <%= link_to alert_lift_path(lift), class: "btn btn-danger no-alert", method: :put, remote: :true do %>
+                          <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
+                        <% end %>
+                      <% end %>
+                    <% else %>
+                      <a href="#" class="btn btn-outline-warning disabled no-favorite">
+                        <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+                      </a>
+                      <a href="#" class="btn btn-outline-danger disabled">
+                        <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
+                      </a>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div id="collapse-<%= lift.lift_code %>-all" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= lift.lift_code %>-all">
+                <div class="panel-body">
+                  <%= render partial: "lifts/lift_show", locals: {lift: lift} %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

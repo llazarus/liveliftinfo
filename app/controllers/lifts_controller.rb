@@ -12,7 +12,7 @@ class LiftsController < ApplicationController
     @weather = Forecast.last
     @avalanche = Avalanche.last
     @history = Status.where("created_at::date > ?", (Date.today - 7))
-    @favorites = Favorite.where({favoritable_type: "Lift", favoriter_id: current_user.id})
+    @favorites = Favorite.where({favoritable_type: "Lift", favoritor_id: current_user.id})
   end
 
   def favorite_lift

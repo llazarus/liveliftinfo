@@ -18,7 +18,7 @@ body {
   margin: 0;
 }
 
-#accordion-all, .panel-title, .panel-group, .panel-body.cam-bg {
+#accordion-all, .panel-title, .panel-group, .panel-body.cam-bg, #no-user-favorites {
   background-color: #f7f7f7;
 }
 
@@ -112,4 +112,8 @@ body {
 
 .border-divide {
   width: 98%;
+}
+
+#no-user-favorites {
+  text-align: center;
 }

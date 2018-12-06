@@ -87,39 +87,58 @@
       </div>
     </div>
 
-    <!-- #favorites tab -->
-    <div role="tabpanel" class="tab-pane fade" id="favorites">
-      This will be the same as the above, but sorted to only diplay content favorited by the user!
+    <% if user_signed_in? %>
+      <!-- #favorites tab -->
+      <div role="tabpanel" class="tab-pane fade" id="favorites">
 
-      <!-- Collapse panel -->
-      <div class="panel-group mb-3" id="accordion-all" role="tablist" aria-multiselectable="true">
+        <% if @favorites != []%>
+          <!-- Collapse panel -->
+          <div class="panel-group mb-3" id="accordion-all" role="tablist" aria-multiselectable="true">
 
-        <!-- Favorite Lifts panel -->
-        <div class="panel panel-default border">
-          <div class="panel-heading border-bottom p-1" role="tab" id="heading-lifts-all">
-            <h2 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-lifts-all" aria-expanded="true" aria-controls="collapse-lifts-all">
-                Favorite Lifts
-              </a>
-            </h2>
-          </div>
-          <div id="collapse-lifts-all" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="heading-lifts-all">
-            <div class="row">
-              <div class="col-6">
-                <%# Render all Blackcomb lifts %>
-                <%= render "blackcomb_lift_status" %>
+            <!-- Favorite Lifts panel -->
+            <div class="panel panel-default border">
+              <div class="panel-heading border-bottom p-1" role="tab" id="heading-lifts-all">
+                <h2 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-lifts-all" aria-expanded="true" aria-controls="collapse-lifts-all">
+                    Favorite Lifts
+                  </a>
+                </h2>
               </div>
-              <div class="col-6">
-                <%# Render all Whistler lifts %>
-                <%= render "whistler_lift_status" %>
+              <div id="collapse-lifts-all" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="heading-lifts-all">
+                <div class="row">
+                  <div class="col-6">
+                    <%# Render all Blackcomb lifts %>
+                    <%= render "blackcomb_favorites" %>
+                  </div>
+                  <div class="col-6">
+                    <%# Render all Whistler lifts %>
+                    <%= render "whistler_favorites" %>
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
-        </div>
-
+        <% else %>
+          <div class="container-fluid p-4" id="no-user-favorites">
+            <h3>
+              You haven't added any favorites yet! <br><br>
+              Press the star button to add/remove a favorite  
+              <a href="#" class="btn btn-lg btn-warning favorite ml-2">
+                <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+              </a>
+              <br><br>
+              Press the bell button to add/remove a SMS alert
+              <a href="#" class="btn btn-lg btn-danger alerted ml-2">
+                <img src="assets/general_icons/alert_null.svg" class="favorite-icon img-fluid">
+              </a>
+            </h3>
+          </div>
+        <% end %>
       </div>
-
-    </div>
+    <% else %>
+      Sign up ya droofus!
+    <% end %>
 
   </div>
 
