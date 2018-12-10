@@ -18,11 +18,17 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.btn.btn-warning').click(function() {
-    $(this).toggleClass('no-favorite favorite');
+  $(".btn.btn-warning").click(function() {
+    $(this).toggleClass("no-favorite favorite");
   });
-  $('.btn.btn-danger').click(function() {
-    $(this).toggleClass('no-alert alerted');
+  $(".btn.btn-danger").click(function() {
+    $(this).toggleClass("no-alert alerted");
+  });
+  $("#nav-favorites-tab").click(function() {
+    console.log("loading favorites");
+  });
+  $("#nav-all-content-tab").click(function() {
+    console.log("loading favorites");
   });
 });
 

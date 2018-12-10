@@ -10,8 +10,6 @@ namespace :update_avalanche do
                          confidence: response["confidence"],
                          danger_ratings: response["dangerRatings"])
     
-    a.save
-
     puts "Updated Avalanche Forecast, id: #{a.id}"
     puts "<<< Update Complete: Avalanche Forecast >>>"
   end
