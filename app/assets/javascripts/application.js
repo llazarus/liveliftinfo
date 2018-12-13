@@ -18,17 +18,33 @@
 //= require_tree .
 
 $(document).ready(function() {
+  // Change favorite button fill on click
   $(".btn.btn-warning").click(function() {
     $(this).toggleClass("no-favorite favorite");
   });
+
+  // Change alert button fill on click
   $(".btn.btn-danger").click(function() {
     $(this).toggleClass("no-alert alerted");
   });
+
+  // Retain active tab in local storage for data refresh
+  // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  //   localStorage.setItem('activeTab', $(e.target).attr('href'));
+  // });
+  // let activeTab = localStorage.getItem('activeTab');
+  // if (activeTab) {
+  //     $('.nav-tabs a[href="' + activeTab + '"]').tab('show');
+  // }
+
+  // Reload favorites/alerts on tab click
   $("#nav-favorites-tab").click(function() {
-    console.log("loading favorites");
+    $('#collapse-whistler-all-favorites').load("/lifts" +  ' #collapse-whistler-all-favorites');
+    // location.reload();
   });
   $("#nav-all-content-tab").click(function() {
-    console.log("loading favorites");
+    $('#collapse-whistler-all').load("/lifts" +  ' #collapse-whistler-all');
+    // location.reload();
   });
 });
 
