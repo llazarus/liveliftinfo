@@ -57,14 +57,18 @@
         <div class="panel panel-default border">
           <div class="panel-heading border-bottom p-1" role="tab" id="heading-cams-all">
             <h2 class="panel-title my-auto">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-cams-all" aria-expanded="false" aria-controls="collapse-cams-all">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-cams-all" aria-expanded="false" aria-controls="collapse-cams-all" id="link-cams-all">
                 Live Cams
               </a>
             </h2>
           </div>
           <div id="collapse-cams-all" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-cams-all">
-            <div class="panel-body">
-              <%= render partial: "lifts/webcam_partials/cam_collapse" %>
+            <div class="panel-body" class="webcam-div">
+              <div id="webcam-load" class="load-complete">
+                <img src="assets/general_icons/loading.svg" alt="loader">
+              </div>
+              <div id="load-cams-here">
+              </div>
             </div>
           </div>
         </div>

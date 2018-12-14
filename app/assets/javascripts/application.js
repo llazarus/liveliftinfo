@@ -39,34 +39,30 @@ $(document).ready(function() {
 
   // Reload favorites/alerts on tab click
   $("#nav-favorites-tab").click(function() {
-    // console.log("Whoooo!");
-    // $(document).ajaxStart(function(){
-    //   $(".lift-load").removeClass("load-complete");
-    // });
-
-    // $('#favorites-tab').load("/" +  ' #favorites-tab');
-
-    // $(document).ajaxComplete(function(){
-    //   $(".lift-load").addClass("load-complete");
-    // });
     location.reload();
   });
   $("#nav-all-content-tab").click(function() {
-    // $(document).ajaxStart(function(){
-    //   $(".lift-load").removeClass("load-complete");
-    // });
-
-    // $('#collapse-whistler-all').load("/lifts" +  ' #collapse-whistler-all');
-
-    // $(document).ajaxComplete(function(){
-    //   $(".lift-load").addClass("load-complete");
-    // });
     location.reload();
   });
 
   $("#toggle-units").click(function() {
     event.preventDefault();
     $(".toggle-unit").toggleClass("no-show show");
+  });
+
+  $("#link-cams-all").click(function() {
+    $(document).ajaxStart(function(){
+      $("#webcam-load").removeClass("load-complete");
+    });
+
+    // $('#webcam-load').load("/webcams" +  ' #load-cams-here');
+    $.get("/webcams", function(data) {
+      $("#load-cams-here").html(data);
+     }, "html");
+
+    $(document).ajaxComplete(function(){
+      $("#webcam-load").addClass("load-complete");
+    });
   });
 });
 

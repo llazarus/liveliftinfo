@@ -19,7 +19,7 @@ body {
   padding-top: 55px;
 }
 
-#accordion-all, .panel-title, .panel-group, .panel-body.cam-bg, #no-user-favorites {
+#accordion-all, .panel-title, .panel-group, .panel-body.cam-bg, #no-user-favorites, .navbar {
   background-color: #f7f7f7;
 }
 
@@ -43,9 +43,9 @@ body {
   margin-right: 15px;
   padding-left: 15px;
   font-size: 0.8em;
+}
 
 // Render up-facing FA chevron on open panels
-}
 .panel-title > a[aria-expanded="true"]:after {
   content: "\f077"; 
 }
@@ -125,10 +125,12 @@ body {
   text-align: center;
 }
 
-.lift-load {
+#webcam-load {
   height: 100%;
   width: 100%;
   z-index: 999;
+  text-align: center;
+  background-color: #f7f7f7;
 }
 
 .load-complete {
