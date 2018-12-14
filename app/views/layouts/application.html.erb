@@ -11,14 +11,14 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light px-4">
       <a class="navbar-brand" href="/">LiveLiftInfo</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active" href="/">Home </a>
+          <a href="#" id="toggle-units" class="align-middle nav-item nav-link active">Toggle Units (°C / °F)</a>
           <% if !user_signed_in? %>
             <a class="nav-item nav-link active" href="/users/sign_in">Sign In</a>
             <a class="nav-item nav-link active" href="/users/sign_up">Sign Up</a> 

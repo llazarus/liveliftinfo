@@ -12,11 +12,17 @@
           <div class="row">
             Description: <%= @weather.forecast[day]["summaryDescription"] %>
           </div>
-          <div class="row">
-            High: <%= @weather.forecast[day]["temperatureHigh"] %> f.
+          <div class="toggle-unit no-show row">
+            High: <%= @weather.forecast[day]["temperatureHigh"] %> °F
           </div>
-          <div class="row">
-            Low: <%= @weather.forecast[day]["temperatureLow"] %> f.
+          <div class="toggle-unit no-show row">
+            Low: <%= @weather.forecast[day]["temperatureLow"] %> °F
+          </div>
+          <div class="toggle-unit show row">
+            High: <%= ((@weather.forecast[day]["temperatureHigh"].to_i - 32) * 5/9) %> °C
+          </div>
+          <div class="toggle-unit show row">
+            Low: <%= ((@weather.forecast[day]["temperatureLow"].to_i - 32) * 5/9) %> °C
           </div>
         </div>
       </div>

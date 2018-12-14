@@ -19,13 +19,21 @@
             <td class="font-weight-bold">Time to Ride:</td>
             <td><%= lift.time_to_ride %> min.</td>
           </tr>
-          <tr>
+          <tr class="toggle-unit no-show">
             <td class="font-weight-bold">Lift Base Elevation:</td>
             <td><%= lift.elevation_i %> ft.</td>
           </tr>
-          <tr>
+          <tr class="toggle-unit show">
+            <td class="font-weight-bold">Lift Base Elevation:</td>
+            <td><%= lift.elevation_m %> m.</td>
+          </tr>
+          <tr class="toggle-unit no-show">
             <td class="font-weight-bold">Vertical:</td>
             <td><%= lift.vertical_i %> ft.</td>
+          </tr>
+          <tr class="toggle-unit show">
+            <td class="font-weight-bold">Vertical:</td>
+            <td><%= lift.vertical_m %> m.</td>
           </tr>
         </tbody>
       </table>
@@ -43,14 +51,23 @@
         <tr>
           <td scope="col" colspan="2" class="status-bg">
             <div class="row justify-content-around">
-            <span>
+            <span class="toggle-unit no-show">
               <strong>24 Hours:</strong> <%= @weather.new_snow_i %> in. 
             </span>
-            <span>
+            <span class="toggle-unit no-show">
               <strong>48 Hours:</strong> <%= @weather.two_days_i %> in.
             </span>
-            <span>
+            <span class="toggle-unit no-show">
               <strong>Past Week:</strong> <%= @weather.seven_days_i %> in.
+            </span>
+            <span class="toggle-unit show">
+              <strong>24 Hours:</strong> <%= (@weather.new_snow_i.to_i * 2.5).to_s %> cm. 
+            </span>
+            <span class="toggle-unit show">
+              <strong>48 Hours:</strong> <%= (@weather.two_days_i.to_i * 2.5).to_s %> cm.
+            </span>
+            <span class="toggle-unit show">
+              <strong>Past Week:</strong> <%= (@weather.seven_days_i.to_i * 2.5) %> cm.
             </span>
             </div>
           </td>

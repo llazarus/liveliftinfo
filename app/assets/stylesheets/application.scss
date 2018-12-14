@@ -16,6 +16,7 @@
 
 body {
   margin: 0;
+  padding-top: 55px;
 }
 
 #accordion-all, .panel-title, .panel-group, .panel-body.cam-bg, #no-user-favorites {
@@ -90,20 +91,26 @@ body {
   height: 3em;
 }
 
+.lift-legend {
+  height: 2em;
+}
+
 .alert-icon, .favorite-icon {
   height: 1.6em;
 } 
 
-.disabled, .no-favorite, .no-alert {
-  background-color: #ffffff !important;
+.disabled, .no-favorite, .no-alert, .btn.btn-outline-warning.disabled, .btn.btn-outline-danger.disabled {
+  background-color: #ffffff;
 }
 
 .favorite {
-  background-color: #ffc107 !important;
+  background-color: #ffc107;
+  border-color: #000;
 }
 
 .alerted {
-  background-color: #dc3545 !important;
+  background-color: #dc3545;
+  border-color: #000;
 }
 
 .carousel.slide {
@@ -116,4 +123,18 @@ body {
 
 #no-user-favorites {
   text-align: center;
+}
+
+.lift-load {
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+.load-complete {
+  display: none;
+}
+
+.toggle-unit.no-show {
+  display: none;
 }

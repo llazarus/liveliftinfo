@@ -29,22 +29,44 @@ $(document).ready(function() {
   });
 
   // Retain active tab in local storage for data refresh
-  // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-  //   localStorage.setItem('activeTab', $(e.target).attr('href'));
-  // });
-  // let activeTab = localStorage.getItem('activeTab');
-  // if (activeTab) {
-  //     $('.nav-tabs a[href="' + activeTab + '"]').tab('show');
-  // }
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    localStorage.setItem('activeTab', $(e.target).attr('href'));
+  });
+  let activeTab = localStorage.getItem('activeTab');
+  if (activeTab) {
+      $('.nav-tabs a[href="' + activeTab + '"]').tab('show');
+  }
 
   // Reload favorites/alerts on tab click
   $("#nav-favorites-tab").click(function() {
-    $('#collapse-whistler-all-favorites').load("/lifts" +  ' #collapse-whistler-all-favorites');
-    // location.reload();
+    // console.log("Whoooo!");
+    // $(document).ajaxStart(function(){
+    //   $(".lift-load").removeClass("load-complete");
+    // });
+
+    // $('#favorites-tab').load("/" +  ' #favorites-tab');
+
+    // $(document).ajaxComplete(function(){
+    //   $(".lift-load").addClass("load-complete");
+    // });
+    location.reload();
   });
   $("#nav-all-content-tab").click(function() {
-    $('#collapse-whistler-all').load("/lifts" +  ' #collapse-whistler-all');
-    // location.reload();
+    // $(document).ajaxStart(function(){
+    //   $(".lift-load").removeClass("load-complete");
+    // });
+
+    // $('#collapse-whistler-all').load("/lifts" +  ' #collapse-whistler-all');
+
+    // $(document).ajaxComplete(function(){
+    //   $(".lift-load").addClass("load-complete");
+    // });
+    location.reload();
+  });
+
+  $("#toggle-units").click(function() {
+    event.preventDefault();
+    $(".toggle-unit").toggleClass("no-show show");
   });
 });
 
