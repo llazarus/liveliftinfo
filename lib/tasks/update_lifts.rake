@@ -1,5 +1,5 @@
 namespace :update_lifts do
-  desc "GET request to API. Persist in Statuses table if lift status has changed since the last API call"
+  desc "Call API. Persist in Statuses table if lift status has changed since the last API call"
   task update_lifts: :environment do
     puts "<<< Contacting API: Lifts At #{Time.now.strftime("%H:%M:%S")} >>>"
     response = HTTParty.get("http://www.epicmix.com/vailresorts/sites/epicmix/api/mobile/lifts.ashx")
@@ -21,8 +21,8 @@ namespace :update_lifts do
       elsif db_query_shortcut.last["status"] != response_shortcut["status"]
         # Persist a new Status object if the given lift's "status" has changed.
         Status.create(lift_code: response_shortcut["liftID"],
-                    name: response_shortcut["liftName"],
-                    status: response_shortcut["status"])
+                      name: response_shortcut["liftName"],
+                      status: response_shortcut["status"])
         puts "Updated lift: #{response_shortcut["liftName"]}!"
       else
         # Do nothing if given lift's "status" value unchanged
