@@ -11,8 +11,13 @@
 
   <body>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light px-4">
-      <a class="navbar-brand" href="/">LiveLiftInfo</a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light px-4 border-top border-bottom">
+      <a class="navbar-brand" href="/">
+        <span class="align-middle">
+          <img src="assets/lift_icons/gondola.svg" alt="header icon" class="header-icon mb-2">
+          LiveLiftInfo
+        </span>
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,7 +35,7 @@
       </div>
     </nav>
 
-    <main class="container-fluid">
+    <main class="container-fluid pt-3">
     
       <%= render 'layouts/messages' %>
 

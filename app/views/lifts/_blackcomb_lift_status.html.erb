@@ -22,15 +22,15 @@
                       </a>
                     </h5>
                   </div>
-                  <div class="col-4 lift-col">
-                    <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status">
+                  <div class="col-xs-12 col-sm-4 lift-col-right d-flex pr-5 justify-content-end">
+                    <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status border rounded mr-2">
                     <% if user_signed_in? %>
                       <% if favorite_exists(lift.id, current_user.id) %>
-                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning favorite", method: :put, remote: :true do %>
+                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning favorite mr-2", method: :put, remote: :true do %>
                           <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
                         <% end %>
                       <% else %>
-                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning no-favorite", method: :put, remote: :true do %>
+                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning no-favorite mr-2", method: :put, remote: :true do %>
                           <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
                         <% end %>
                       <% end %>
@@ -45,7 +45,7 @@
                         <% end %>
                       <% end %>
                     <% else %>
-                      <a href="#" class="btn btn-outline-warning disabled">
+                      <a href="#" class="btn btn-outline-warning disabled mr-2">
                         <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
                       </a>
                       <a href="#" class="btn btn-outline-danger disabled">

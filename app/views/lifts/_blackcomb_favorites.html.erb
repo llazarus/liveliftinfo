@@ -12,7 +12,7 @@
         <div class="panel-group pl-2" id="accordion-blackcomb-lifts-all" role="tablist" aria-multiselectable="true">
           <!-- Render a panel for each Blackcomb list -->
           <% @blackcomb_lifts.each do |lift| %>
-          <% if favorite_exists(lift.id, current_user.id) %>
+          <% if favorite_exists(lift.id, current_user.id) || alert_exists(lift.id, current_user.id) %>
             <div class="panel panel-default p-1 border-top">
               <div class="panel-heading" role="tab" id="heading-<%= lift.lift_code %>-all">
                 <div class="row">
@@ -23,15 +23,15 @@
                       </a>
                     </h5>
                   </div>
-                  <div class="col-4 lift-col">
-                    <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status">
+                  <div class="col-xs-12 col-sm-4 lift-col-right d-flex pr-5 justify-content-end">
+                    <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status img-fluid border rounded mr-2">
                     <% if user_signed_in? %>
                       <% if favorite_exists(lift.id, current_user.id) %>
-                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning favorite", method: :put, remote: :true do %>
+                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning favorite mr-2", method: :put, remote: :true do %>
                           <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
                         <% end %>
                       <% else %>
-                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning no-favorite", method: :put, remote: :true do %>
+                        <%= link_to favorite_lift_path(lift), class: "btn btn-warning no-favorite mr-2", method: :put, remote: :true do %>
                           <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
                         <% end %>
                       <% end %>

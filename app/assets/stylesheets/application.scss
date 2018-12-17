@@ -16,7 +16,7 @@
 
 body {
   margin: 0;
-  padding-top: 55px;
+  padding-top: 60px;
 }
 
 #accordion-all, .panel-title, .panel-group, .panel-body.cam-bg, #no-user-favorites, .navbar {
@@ -58,7 +58,7 @@ body {
   width: 150px;
 }
 
-.avalanche-alp, .status-bg, .lift-image, .avalanche-image, .weather-image {
+.avalanche-alp, .status-bg, .lift-image, .avalanche-image, .weather-image, .lift-status {
   background-color: #ffffff;
 }
 
@@ -95,8 +95,9 @@ body {
   height: 2em;
 }
 
-.alert-icon, .favorite-icon {
+.alert-icon, .favorite-icon, .header-icon {
   height: 1.6em;
+  min-width: 25px;
 } 
 
 .disabled, .no-favorite, .no-alert, .btn.btn-outline-warning.disabled, .btn.btn-outline-danger.disabled {
@@ -139,4 +140,16 @@ body {
 
 .toggle-unit.no-show {
   display: none;
+}
+
+@media (max-width: 575.98px) {
+  .icon-legend, .carousel-caption {
+    display: none !important;
+  }
+
+  .lift-col-right {
+    display: block !important;
+    text-align: center;
+    padding-left: 30%; 
+  }
 }

@@ -4,9 +4,9 @@
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
       <a class="nav-item nav-link active" id="nav-all-content-tab" data-toggle="tab" href="#all-content" role="tab" aria-controls="nav-home" aria-selected="true">All Content</a>
       <% if user_signed_in? %>
-        <a class="nav-item nav-link" id="nav-favorites-tab" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false">Favorite Lifts</a>
+        <a class="nav-item nav-link" id="nav-favorites-tab" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false">My Lifts</a>
       <% else %>
-          <a class="nav-item nav-link disabled" id="nav-favorites-tab-disabled" data-toggle="tab" href="#" role="tab" aria-controls="no-user" aria-selected="false">Favorite Lifts</a>
+          <a class="nav-item nav-link disabled" id="nav-favorites-tab-disabled" data-toggle="tab" href="#" role="tab" aria-controls="no-user" aria-selected="false">My Lifts</a>
       <% end %>
       <span class="icon-legend d-flex pt-2 ml-auto align-middle">
         <span class="h-100">
@@ -41,11 +41,11 @@
           </div>
           <div id="collapse-lifts-all" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="heading-lifts-all">
             <div class="row">
-              <div class="col-6">
+              <div class="col-xl-6 col-lg-12">
                 <%# Render all Blackcomb lifts %>
                 <%= render "blackcomb_lift_status" %>
               </div>
-              <div class="col-6">
+              <div class="col-xl-6 col-lg-12">
                 <%# Render all Whistler lifts %>
                 <%= render "whistler_lift_status" %>
               </div>
@@ -112,7 +112,7 @@
     <div role="tabpanel" class="tab-pane fade" id="favorites">
 
       <div id="favorites-tab">
-        <% if @favorites != []%>
+        <% if @favorites != [] || @alerts != [] %>
           <!-- Collapse panel -->
           <div class="panel-group mb-3" id="accordion-all" role="tablist" aria-multiselectable="true">
 
@@ -121,17 +121,17 @@
               <div class="panel-heading border-bottom p-1" role="tab" id="heading-lifts-favorites">
                 <h2 class="panel-title my-auto">
                   <a role="button" data-toggle="collapse" data-parent="#accordion-all" href="#collapse-lifts-favorites" aria-expanded="true" aria-controls="collapse-lifts-favorites">
-                    Favorite Lifts
+                    My Lifts
                   </a>
                 </h2>
               </div>
               <div id="collapse-lifts-favorites" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="heading-lifts-favorites">
                 <div class="row">
-                  <div class="col-6">
+                  <div class="col-xl-6 col-lg-12">
                     <%# Render all Blackcomb lifts %>
                     <%= render "blackcomb_favorites" %>
                   </div>
-                  <div class="col-6">
+                  <div class="col-xl-6 col-lg-12">
                     <%# Render all Whistler lifts %>
                     <%= render "whistler_favorites" %>
                   </div>
@@ -143,7 +143,7 @@
         <% else %>
           <div class="container-fluid p-4 border" id="no-user-favorites">
             <h3>
-              You haven't added any favorites yet! <br><br>
+              You haven't added any favorites or alerts yet! <br><br>
               Press the star button to add or remove a favorite  
               <a href="#" class="btn btn-lg btn-warning no-favorite ml-2">
                 <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
