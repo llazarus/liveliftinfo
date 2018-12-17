@@ -1,38 +1,45 @@
 <div class="container mt-2 lift-show">
 
-  <div class="row p-3 justify-content-between">
-    <div class="col-4 border border-dark rounded lift-image">
+  <div class="row pr-3 pt-3 pl-3 d-flex align-items-center h-100">
+    <div class="col-xs-12 col-sm-4 border border-dark rounded lift-image-container">
       <img src="<%= retrieve_lift_image(lift.lift_type) %>" class="lift-image h-100 img-fluid mx-auto d-block">
     </div>
-    <div class="col-8">
-      <table class="table table-sm table-borderless">
-        <tbody>
+    <div class="col-xs-12 col-sm-8 lift-table">
+      <table class="table table-sm table-borderless d-flex justify-content-around">
+        <tbody class="align-middle">
           <tr>
-            <td class="font-weight-bold">Lift Capacity:</td>
+            <td class="font-weight-bold text-right">Lift Capacity:</td>
+            <td></td>
             <td><%= lift.capacity %> people</td>
           </tr>
           <tr>
-            <td class="font-weight-bold">Upload Capacity:</td>
+            <td class="font-weight-bold text-right">Upload Capacity:</td>
+            <td></td>
             <td><%= lift.capacity_hr %> people/hr.</td>
           </tr>
           <tr>
-            <td class="font-weight-bold">Time to Ride:</td>
+            <td class="font-weight-bold text-right">Time to Ride:</td>
+            <td></td>
             <td><%= lift.time_to_ride %> min.</td>
           </tr>
           <tr class="toggle-unit no-show">
-            <td class="font-weight-bold">Lift Base Elevation:</td>
+            <td class="font-weight-bold text-right">Lift Base Elevation:</td>
+            <td></td>
             <td><%= lift.elevation_i %> ft.</td>
           </tr>
           <tr class="toggle-unit show">
-            <td class="font-weight-bold">Lift Base Elevation:</td>
+            <td class="font-weight-bold text-right">Lift Base Elevation:</td>
+            <td></td>
             <td><%= lift.elevation_m %> m.</td>
           </tr>
           <tr class="toggle-unit no-show">
-            <td class="font-weight-bold">Vertical:</td>
+            <td class="font-weight-bold text-right">Vertical:</td>
+            <td></td>
             <td><%= lift.vertical_i %> ft.</td>
           </tr>
           <tr class="toggle-unit show">
-            <td class="font-weight-bold">Vertical:</td>
+            <td class="font-weight-bold text-right">Vertical:</td>
+            <td></td>
             <td><%= lift.vertical_m %> m.</td>
           </tr>
         </tbody>

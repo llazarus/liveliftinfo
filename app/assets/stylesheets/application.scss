@@ -58,7 +58,7 @@ body {
   width: 150px;
 }
 
-.avalanche-alp, .status-bg, .lift-image, .avalanche-image, .weather-image, .lift-status {
+.avalanche-alp, .status-bg, .lift-image-container , .avalanche-image, .weather-image, .lift-status {
   background-color: #ffffff;
 }
 
@@ -152,4 +152,16 @@ body {
     text-align: center;
     padding-left: 30%; 
   }
+
+  .lift-image {
+    max-width: 30%;
+    max-height: 30%;
+  }
+
+  .lift-image-container {
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 1em;
+  }
+
 }
