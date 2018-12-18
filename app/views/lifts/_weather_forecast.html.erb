@@ -1,28 +1,35 @@
 <div class="container">
   <div class="row justify-content-around">
     <% 6.times do |day| %>
-      <div class="col-3 m-4">
+      <div class="col-xs-6 col-sm-4 col-xl-3 m-4">
         <div class="row font-weight-bold justify-content-center mb-1">
           <%= @weather.forecast[day]["dayDescription"] %>
         </div>
-        <div class="col border border-dark rounded weather-image mb-1">
+        <div class="col border border-dark rounded weather-image mx-auto mb-1">
           <img src="<%= retrieve_weather_image(@weather.forecast[day]["iconName"]) %>" class="weather-image h-90 img-fluid mx-auto d-block p-3">
         </div>
         <div class="col">
-          <div class="row">
-            Description: <%= @weather.forecast[day]["summaryDescription"] %>
+          <div class="row justify-content-center">
+            <strong>Description</strong>
+            <span class="text-center">
+              <%= @weather.forecast[day]["summaryDescription"] %>
+            </span>
           </div>
-          <div class="toggle-unit no-show row">
-            High: <%= @weather.forecast[day]["temperatureHigh"] %> °F
+          <div class="toggle-unit no-show row justify-content-around">
+            <span>
+              <strong>High:</strong> <%= @weather.forecast[day]["temperatureHigh"] %> °F
+            </span>
+            <span>
+              <strong>Low:</strong> <%= @weather.forecast[day]["temperatureLow"] %> °F
+            </span>
           </div>
-          <div class="toggle-unit no-show row">
-            Low: <%= @weather.forecast[day]["temperatureLow"] %> °F
-          </div>
-          <div class="toggle-unit show row">
-            High: <%= ((@weather.forecast[day]["temperatureHigh"].to_i - 32) * 5/9) %> °C
-          </div>
-          <div class="toggle-unit show row">
-            Low: <%= ((@weather.forecast[day]["temperatureLow"].to_i - 32) * 5/9) %> °C
+          <div class="toggle-unit show row justify-content-around">
+            <span>
+              <strong>High:</strong> <%= ((@weather.forecast[day]["temperatureHigh"].to_i - 32) * 5/9) %> °C
+            </span>
+            <span>
+              <strong>Low:</strong> <%= ((@weather.forecast[day]["temperatureLow"].to_i - 32) * 5/9) %> °C
+            </span>
           </div>
         </div>
       </div>

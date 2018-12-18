@@ -1,33 +1,33 @@
 <div class="container">
   <div class="row">
-    <div class="col d-flex justify-content-center m-3">
+    <div class="col d-flex justify-content-center m-3 text-center">
       <h2>Avalanche Canada Sea To Sky Forecast</h2>
     </div>
   </div>
 
   <div class="row p-3 justify-content-between align-items-center">
-    <div class="col-3 border border-dark rounded avalanche-image">
+    <div class="col-lg-3 border border-dark rounded avalanche-image">
       <img src="/assets/general_icons/avalanche.svg" alt="avalanche icon" class="avalanche-image h-100 img-fluid mx-auto d-block">
     </div>
-    <div class="col-8">
+    <div class="col-md-12 col-lg-8">
 
       <table class="table table-sm table-borderless">
         <tbody>
           <tr>
-            <td class="font-weight-bold">Issued:</td>
+            <td class="font-weight-bold text-right">Issued:</td>
             <td><%= @avalanche.date_issued.strftime("%B %d, %Y") %></td>
           </tr>
           <tr>
-            <td class="font-weight-bold">Valid Until:</td>
+            <td class="font-weight-bold text-right text-nowrap">Valid Until:</td>
             <td><%= @avalanche.valid_until.strftime("%B %d, %Y") %></td>
           </tr>
           <tr>
-            <td class="font-weight-bold">Highlights:</td>
-            <td><%= @avalanche.highlights.html_safe %></td>
+            <td class="font-weight-bold text-right">Highlights:</td>
+            <td class="avalanche-canada-html"><%= @avalanche.highlights.html_safe %></td>
           </tr>
           <tr>
-            <td class="font-weight-bold">Report Confidence:</td>
-            <td><%= @avalanche.confidence.chomp(" - ") %></td>
+            <td class="font-weight-bold text-center report-confidence-break">Report Confidence:</td>
+            <td class="align-middle avalanche-canada-html""><%= @avalanche.confidence.chomp(" - ") %></td>
           </tr>
         </tbody>
       </table>
