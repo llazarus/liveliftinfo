@@ -17,7 +17,7 @@
                   input_html: { autocomplete: "phone" } %>
       <%= f.input :password,
                   label: "Update Password",
-                  hint: "Leave blank if you don't want to change",
+                  hint: "Leave blank if you don't want to change your current password",
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
@@ -31,12 +31,10 @@
                   input_html: { autocomplete: "current-password" } %>
     </div>
 
-    <div class="form-actions">
+    <div class="form-actions mb-2">
       <%= f.button :submit, "Update", class: "btn btn-outline-dark" %>
     </div>
   <% end %>
-
-  <br>
 
   <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
   <br>
