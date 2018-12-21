@@ -62,7 +62,7 @@ $(document).ready(function() {
 
     $(document).ajaxComplete(function(){
       $("#webcam-load").addClass("load-complete");
+      $("#webcam-load").hide();
     });
   });
 });
-
