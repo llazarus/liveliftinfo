@@ -149,8 +149,18 @@ body {
 
 .navbar .navbar-nav > a:hover,
 .navbar .navbar-nav > a:focus {
-  color: yellow !important;
+  color: #1B3699 !important;
 }
+
+// .panel-title > a {
+//   color: #263D8E !important;
+// }
+
+// .panel-title > a:hover,
+// .panel-title > a:focus {
+//   color: #1B264F !important;
+// }
+
 
 @media (max-width: 575.98px) {
   .icon-legend, .carousel-caption {
