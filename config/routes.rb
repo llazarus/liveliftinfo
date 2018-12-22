@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   end
 
   resources :webcams, only: [ :index ]
+  
+  authenticated :user, -> user { user.admin? }  do
+    mount DelayedJobWeb, at: "/delayed_job"
+  end
 
 end
