@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :webcams, only: [ :index ]
   
+  # match "/delayed_job" => DelayedJobWeb, :anchor => false, :via => [:get, :post]
+  
   authenticated :user, -> user { user.admin? }  do
     mount DelayedJobWeb, at: "/delayed_job"
   end
