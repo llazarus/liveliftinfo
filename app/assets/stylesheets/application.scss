@@ -175,6 +175,10 @@ a:hover {
   color: #A1A4A8;
 }
 
+.nav-link.active {
+  color: #000 !important;
+}
+
 
 @media (max-width: 575.98px) {
   .icon-legend, .carousel-caption {
