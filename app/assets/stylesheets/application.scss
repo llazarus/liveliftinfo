@@ -25,11 +25,11 @@ body {
 }
 
 #accordion-all, .panel-title, .panel-group, .panel-body.cam-bg, #no-user-favorites, .navbar {
-  background-color: #f7f7f7;
+  background-color: #F4F6F7;
 }
 
 .panel-body {
-  background-color: #A0B3F7;
+  background-color: rgba(221, 231, 255, 0.45);
 }
 
 // Position <a> elements w/in. .panel-title
@@ -116,7 +116,7 @@ body {
 }
 
 .carousel.slide {
-  max-width: 50%;
+  max-width: 60%;
 }
 
 .border-divide {
@@ -147,24 +147,42 @@ body {
   margin: 0 0.5em;
 } 
 
-.navbar .navbar-nav > a:hover,
-.navbar .navbar-nav > a:focus {
-  color: #1B3699 !important;
+.navbar .navbar-nav > a:hover {
+  color: #A1A4A8 !important;
 }
 
-// .panel-title > a {
-//   color: #263D8E !important;
-// }
+.navbar-toggler {
+  border-color: #000 !important;
+}
 
-// .panel-title > a:hover,
-// .panel-title > a:focus {
-//   color: #1B264F !important;
-// }
+.navbar-toggler:hover {
+  border-color: #A1A4A8 !important;
+}
+
+.panel-title > a,
+#nav-all-contents-tab,
+#nav-favorites-tab,
+.external-link-span > a,
+a {
+  color: #000;
+}
+
+.panel-title > a:hover,
+#nav-all-content-tab:hover,
+#nav-favorites-tab:hover,
+.external-link-span > a:hover,
+a:hover {
+  color: #A1A4A8;
+}
 
 
 @media (max-width: 575.98px) {
   .icon-legend, .carousel-caption {
     display: none !important;
+  }
+
+  .carousel.slide {
+    max-width: 90%;
   }
 
   .lift-col-right {
@@ -191,5 +209,9 @@ body {
 @media (max-width: 991.98px) {
   .avalanche-image {
     display: none !important;
+  }
+
+  .carousel.slide {
+    max-width: 80%;
   }
 }
