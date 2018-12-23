@@ -7,8 +7,8 @@
 #  
 ### WHENEVER YOU ADD A JOB, IN TERMINAL RUN: "whenever --update-crontab" ###
 
-# Set output of dev environment cron logs to "~/Users/MyAccount/Desktop/whenever_cron_log_d"
-set :output, "~/Desktop/whenever_cron_log_d/mail.log"
+# Set output of cron logs to
+set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
 # Set environment to development, CHANGE FOR PRODUCTION
 set :environment, "development"
 
@@ -33,8 +33,8 @@ every 1.day, at: '11:55 pm' do
   rake "reset_day_alerts:reset_day_alerts"
 end
 
-# Update AC Forecast every day at 06:00
-every 1.day, at: '6:00 am' do
+# Update AC Forecast every day at 06:00 and 11:30
+every 1.day, at: ['6:00 am', '11:30 am'] do
   rake "update_avalanche:update_avalanche"
 end
 
