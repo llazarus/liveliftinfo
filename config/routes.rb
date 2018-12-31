@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about/index'
   devise_for :users
   
   root to: 'lifts#index'
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
       put 'alert' => 'lifts#alert_lift'
     end
   end
+
+  resources :about, only: [ :index ]
 
   resources :webcams, only: [ :index ]
     

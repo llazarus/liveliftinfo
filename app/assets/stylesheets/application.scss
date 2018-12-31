@@ -24,7 +24,8 @@ body {
   padding: 0;
 }
 
-#accordion-all, .panel-title, .panel-group, .panel-body.cam-bg, #no-user-favorites, .navbar {
+#accordion-all, .panel-title, .panel-group, .panel-body.cam-bg,
+#no-user-favorites, .navbar, .footer {
   background-color: #F4F6F7;
 }
 
@@ -115,6 +116,11 @@ body {
   border-color: #000;
 }
 
+#note-warning {
+  background-color: #dc3546a6;
+  border-radius: 5px; 
+}
+
 .carousel.slide {
   max-width: 60%;
 }
@@ -179,6 +185,33 @@ a:hover {
   color: #000 !important;
 }
 
+.footer {
+  font-size: 0.8em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#main-container {
+  padding-bottom: 2.5em;
+}
+
+.btn, .lift-status {
+  border-radius: 3% !important;
+}
+
+.image-tag-favorite {
+  height: 1.3em;
+}
+
+.image-tag-alert {
+  height: 1.5em;
+}
+
+.github-logo {
+  height: 5em;
+}
 
 @media (max-width: 575.98px) {
   .icon-legend, .carousel-caption {
@@ -211,7 +244,7 @@ a:hover {
 }
 
 @media (max-width: 991.98px) {
-  .avalanche-image {
+  .avalanche-image, .weather-footer {
     display: none !important;
   }
 

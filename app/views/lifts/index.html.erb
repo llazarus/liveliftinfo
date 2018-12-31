@@ -6,7 +6,7 @@
       <% if user_signed_in? %>
         <a class="nav-item nav-link" id="nav-favorites-tab" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false">My Lifts</a>
       <% else %>
-          <a class="nav-item nav-link disabled" id="nav-favorites-tab-disabled" data-toggle="tab" href="#" role="tab" aria-controls="no-user" aria-selected="false">My Lifts</a>
+        <a class="nav-item nav-link disabled" id="nav-favorites-tab-disabled" data-toggle="tab" href="#" role="tab" aria-controls="no-user" aria-selected="false">My Lifts</a>
       <% end %>
       <span class="icon-legend d-flex pt-2 ml-auto align-middle">
         <span class="h-100">
@@ -160,4 +160,32 @@
     </div>
   </div>
 
+  <div class="footer text-center py-2 border d-flex justify-content-around">
+    <span class="mx-3 my-auto footer-constant">
+      <span>
+        <%= link_to("About This Site", about_index_path) %>
+      </span>
+    </span>
+
+    <span class="mx-3 my-auto weather-footer">
+      <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-1">
+      <span class="external-link-span">
+        <%= link_to "Full Resort Weather Forecast", "https://www.whistlerblackcomb.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx", target: :_blank, class: "pb-1" %>
+      </span>
+    </span>
+    
+    <span class="mx-3 my-auto weather-footer">
+      <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-1">
+      <span class="external-link-span">
+        <%= link_to "Environment Canada Weather Forecast", "https://weather.gc.ca/city/pages/bc-86_metric_e.html", target: :_blank, class: "pb-1" %>
+      </span>
+    </span>
+    
+    <span class="mx-3 my-auto footer-constant">
+      <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-1">
+      <span class="external-link-span">
+        <%= link_to "Full Avalanche Canada Forecast", "https://www.avalanche.ca/forecasts/sea-to-sky", target: :_blank, class: "pb-1" %>
+      </span>
+    </span>
+  </div>
 </div>
