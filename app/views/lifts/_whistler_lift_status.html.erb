@@ -45,12 +45,16 @@
                         <% end %>
                       <% end %>
                     <% else %>
-                      <a href="#" class="btn btn-outline-warning disabled no-favorite mr-2 pt-2">
-                        <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
-                      </a>
-                      <a href="#" class="btn btn-outline-danger disabled pt-2">
-                        <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
-                      </a>
+                      <span class="d-inline-flex" tabindex="0" data-toggle="tooltip" title="Sign in to create a favorite!">
+                        <a href="#" class="btn btn-outline-warning disabled no-favorite mr-2 pt-2">
+                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+                        </a>
+                      </span>
+                      <span class="d-inline-flex" tabindex="0" data-toggle="tooltip" title="Sign in to set an SMS alert!">
+                        <a href="#" class="btn btn-outline-danger disabled pt-2">
+                          <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
+                        </a>
+                      </span>
                     <% end %>
 
 

@@ -18,6 +18,9 @@
 //= require_tree .
 
 $(document).ready(function() {
+  // Enable tooltips site-wide
+  $('[data-toggle="tooltip"]').tooltip();
+
   // Change favorite button fill on click
   $(".btn.btn-warning").click(function() {
     $(this).toggleClass("no-favorite favorite");

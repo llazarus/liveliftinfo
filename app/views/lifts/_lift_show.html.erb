@@ -67,6 +67,9 @@
             <span class="toggle-unit no-show">
               <strong>Past Week:</strong> <%= @weather.seven_days_i %> in.
             </span>
+            <span class="toggle-unit no-show">
+              <strong>Snowpack Depth:</strong> <%= @weather.snowpack_i %> in.
+            </span>
             <span class="toggle-unit show">
               <strong>24 Hours:</strong> <%= (@weather.new_snow_i.to_i * 2.5).to_s %> cm. 
             </span>
@@ -74,7 +77,10 @@
               <strong>48 Hours:</strong> <%= (@weather.two_days_i.to_i * 2.5).to_s %> cm.
             </span>
             <span class="toggle-unit show">
-              <strong>Past Week:</strong> <%= (@weather.seven_days_i.to_i * 2.5) %> cm.
+              <strong>Past Week:</strong> <%= (@weather.seven_days_i.to_i * 2.5).to_s %> cm.
+            </span>
+            <span class="toggle-unit show">
+              <strong>Snowpack Depth:</strong> <%= (@weather.snowpack_i.to_i * 2.5).to_s %> cm.
             </span>
             </div>
           </td>

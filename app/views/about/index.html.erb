@@ -1,0 +1,74 @@
+<div class="container-flex">
+  <ul class="list-group  list-group-flush pt-3">
+    <li class="list-group-item">
+      <h3>Using This Site</h3>
+      <p class="px-2 text-justify">
+        Welcome to LiveLiftInfo! This site is designed to act as a one-stop winter planning resource for riding Whistler Blackcomb and the surrounding area. All panel headings preceeded by a chevron symbol (<i class="fa fa-chevron-down"></i>) are interactive, and when selected will toggle additional information:
+      </p>
+      <p class="px-4 text-justify">
+        <strong>-</strong> Select the panel heading of an individual chairlift to display information including the chairlift's schedule history for the past week, enabling you to selective ride areas that have seen less traffic between storm cycles. Select "Toggle Units (°C / °F)" in the navigation bar to switch between metric and imperial units of measurement.
+      </p>
+      <p class="px-4 text-justify">
+        <strong>-</strong> Select the "Live Cams" panel heading to load the most current available webcam images from various locations within the resort and along Sea to Sky Highway. Webcam images are refreshed every time you reselect the "Live Cams" panel heading.
+      </p>
+      <p class="px-4 text-justify">
+        <strong>-</strong> Select the "Weather Summary" panel heading to show a synopsis of the weekly weather forecast. The weather forecast is sourced directly from the resort and is updated every other hour. Select "Toggle Units (°C / °F)" in the navigation bar to switch between metric and imperial units of measurement. You can open fully detailed weather reports in a new tab by selecting the links located in the home page's footer or at the bottom of the "Weather Summary" panel.
+      </p>
+      <p class="px-4 text-justify">
+        <strong>-</strong> Select the "Avalanche Forecast" panel heading to show an abbreviated version of the current day's Avalanche Canada forecast for the Sea to Sky region. The avalanche forecast is provided by Avalanche Canada and is updated daily at 6 AM and 11:30 AM. The abreviated avalanche forecast should only be used as a reference; prior to making any decisions reference the complete forecast in a new tab by selecting the link located in the home page's footer or at the bottom of the "Avalanche Forecast" panel.  
+      </p>
+      <p class="px-4 text-justify">
+        The status of each individual chairlift is denoted by the symbol alongside the panel heading. Chairlift status is sourced directly from the resort and is updated every minute during operating hours.
+      </p>
+    </li>
+    <li class="list-group-item">
+      <h3>Creating A User Account</h3>
+      <p class="px-2 text-justify">
+        Signing up is necessary to create favorites and to receive optional SMS alerts. To create an account, select <%= link_to('"Sign Up"', new_user_registration_path) %> in the navigation bar, then check the inbox of the provided email address to confirm your account before <%= link_to("signing in", new_user_session_path) %>. LiveLiftInfo does not ask you to provide any information beyond what is necessary to verify and restore your account and to deliver selected SMS alerts. </p>
+    </li>
+    <li class="list-group-item">
+      <h3>User Favorites</h3>
+      <p class="px-2 text-justify">
+        If signed in, users are able to select individual chairlifts as favorites. To add or remove a favorite, select the star symbol (<%= image_tag("/assets/general_icons/favorite_null.svg", class: "image-tag-favorite pb-1") %>) in the specified chairlift's panel header. To view a condensed list containing only your favorite chairlifts, select the "My Lifts" tab heading on the home page. 
+      </p>
+    </li>
+    <li class="list-group-item">
+      <h3>SMS Alerts</h3>
+      <p class="px-2 text-justify">
+        If signed in, users are able to set SMS alerts to be dispatched when a specified chairlift opens. To add or remove an alert, select the bell symbol (<%= image_tag("/assets/general_icons/alert_null.svg", class: "image-tag-alert pb-1") %>) in the specified chairlift's panel header. Use this feature to avoid unnecessarily waiting in lift lines and draining your phone's battery in the cold! 
+      </p>
+      <p class="mx-4 p-2 text-center border" id="note-warning">
+        <em>
+          Note: SMS alerts are automatically dispatched by a virtual US-based phone number. There is no cost to utilize the site but your mobile plan's standard rate will apply to receive messages.
+        </em>
+      </p>
+    </li>
+    <li class="list-group-item">
+      <h3>Data Feeds</h3>
+      <p class="px-2 text-justify">
+        Data for LiveLiftInfo is provided by Vail Resorts, DriveBC, and Avalanche Canada. 
+        <br><br>
+        The site's information is updated on the following intervals:</p>
+      <p class="px-4 text-justify">
+        Lift Status <strong>-</strong> Updated every minute during operating hours
+      </p>
+      <p class="px-4 text-justify">
+        Live Cams <strong>-</strong> Updated each time the "Live Cams" panel heading is selected
+      </p>
+      <p class="px-4 text-justify">
+        Weather Forecast & Snowfall Totals <strong>-</strong> Updated every two hours
+      </p>
+      <p class="px-4 text-justify">
+        Avalanche Forecast <strong>-</strong> Updated twice daily at 6 AM and 11:30 AM
+      </p>
+    </li>
+    <li class="list-group-item">
+      <h3>Site Source Code</h3>
+      <span class="d-flex justify-content-center">
+        <a href="https://github.com/llazarus/liveliftinfo" target="blank">
+          <%= image_tag("/assets/general_icons/github_logo.png", class: "github-logo") %>
+        </a>
+      </span>
+    </li>
+  </ul>
+</div>

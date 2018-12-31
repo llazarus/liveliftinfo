@@ -25,7 +25,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a href="#" id="toggle-units" class="align-middle nav-item nav-link active">Toggle Units (°C / °F)</a>
+          <% if current_page?(root_path) %>
+            <a href="#" id="toggle-units" class="align-middle nav-item nav-link active">Toggle Units (°C / °F)</a>
+          <% else %>
+             <%= link_to("Home", root_path, class: "nav-item nav-link active") %>
+          <% end %>
           <% if !user_signed_in? %>
             <a class="nav-item nav-link active" href="/users/sign_in">Sign In</a>
             <a class="nav-item nav-link active" href="/users/sign_up">Sign Up</a> 
@@ -37,13 +41,12 @@
       </div>
     </nav>
 
-    <main class="container-fluid pt-3">
+    <main class="container-fluid pt-3" id="main-container">
     
       <%= render 'layouts/messages' %>
 
       <%= yield %>
 
     </main>
-
   </body>
 </html>
