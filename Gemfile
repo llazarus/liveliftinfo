@@ -47,6 +47,8 @@ gem 'simple_form'
 gem 'acts_as_favoritor'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
