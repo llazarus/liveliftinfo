@@ -5,15 +5,12 @@
         <h5 class="modal-title text-center mx-auto" id="exampleModalLongTitle">Welcome to LiveLiftInfo!</h5>
       </div>
       <div class="modal-body text-justify">
-        Creating an account will allow you to personalize a list of your favorite chairlifts as well as set text message alerts to be dispatched when a chairlift opens. Signing up requires a valid email address and US or Canadian mobile number. Text message alerts are automatically dispatched by a virtual US-based phone number. There is no cost to utilize the site but your mobile plan's standard rate will apply to receive messages <br><br>
-        
-        <span>
-          <%= link_to("Click here for more information on how this site works", about_index_path) %>. 
-        </span>
+        Creating an account will allow you to personalize a list of your favorite chairlifts as well as set text message alerts to be dispatched when a chairlift opens. Signing up requires a valid email address and US or Canadian mobile phone number. Text message alerts are dispatched by a US-based virtual phone number. There is no cost to utilize the site but your mobile plan's standard rate will apply to receive messages.
       </div>
       <div class="modal-footer d-block">
+        <%= link_to("More Information", about_index_path, class: "btn btn-secondary w-100 mx-0 mb-2", role: "button") %>     
         <a href="#" class="btn btn-success w-100 mx-0 mb-2" role="button" data-dismiss="modal">Sign Up</a>
-        <a href="/" class="btn btn-danger w-100 mx-0" role="button">Return to Home Page</a>
+        <a href="/" class="btn btn-danger w-100 mx-0" role="button">Return To Home Page</a>
       </div>
     </div>
   </div>
