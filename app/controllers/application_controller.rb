@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
     status = Status.where(lift_code: lift.lift_code).last.status.upcase
 
     if status == "O"
-      "/status_icons/open.svg"
+      "status_icons/open.svg"
     elsif status == "H"
-      "/status_icons/hold.svg"
+      "status_icons/hold.svg"
     else
-      "/status_icons/closed.svg"
+      "status_icons/closed.svg"
     end
   end
   helper_method :retrieve_lift_status
