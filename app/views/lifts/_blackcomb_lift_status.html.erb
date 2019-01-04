@@ -23,36 +23,36 @@
                     </h5>
                   </div>
                   <div class="col-xs-12 col-sm-4 lift-col-right d-flex pr-5 justify-content-end">
-                    <img src="<%= retrieve_lift_status(lift) %>" alt="lift status" class="lift-status border rounded mr-2">
+                    <%= image_tag("#{retrieve_lift_status(lift)}", class: "lift-status img-fluid border rounded mr-2") %>
                     <% if user_signed_in? %>
                       <% if favorite_exists(lift.id, current_user.id) %>
                         <%= link_to favorite_lift_path(lift), class: "btn btn-warning favorite mr-2 pt-2", method: :put, remote: :true do %>
-                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+                          <%= image_tag("general_icons/favorite_null.svg", class: "favorite-icon img-fluid") %>
                         <% end %>
                       <% else %>
                         <%= link_to favorite_lift_path(lift), class: "btn btn-warning no-favorite mr-2 pt-2", method: :put, remote: :true do %>
-                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+                          <%= image_tag("general_icons/favorite_null.svg", class: "favorite-icon img-fluid") %>
                         <% end %>
                       <% end %>
                       
                       <% if alert_exists(lift.id, current_user.id) %>
                         <%= link_to alert_lift_path(lift), class: "btn btn-danger alerted pt-2", method: :put, remote: :true do %>
-                          <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
+                          <%= image_tag("general_icons/alert_null.svg", class: "alert-icon img-fluid") %>
                         <% end %>
                       <% else %>
                         <%= link_to alert_lift_path(lift), class: "btn btn-danger no-alert pt-2", method: :put, remote: :true do %>
-                          <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
+                           <%= image_tag("general_icons/alert_null.svg", class: "alert-icon img-fluid") %>
                         <% end %>
                       <% end %>
                     <% else %>
                       <span class="d-inline-flex" tabindex="0" data-toggle="tooltip" title="Sign in to create a favorite!">
                         <a href="#" class="btn btn-outline-warning disabled mr-2 pt-2">
-                          <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+                          <%= image_tag("general_icons/favorite_null.svg", class: "favorite-icon img-fluid") %>
                         </a>
                       </span>
                       <span class="d-inline-flex" tabindex="0" data-toggle="tooltip" title="Sign in to set an SMS alert!">
                         <a href="#" class="btn btn-outline-danger disabled pt-2">
-                          <img src="assets/general_icons/alert_null.svg" class="alert-icon img-fluid">
+                          <%= image_tag("general_icons/alert_null.svg", class: "alert-icon img-fluid") %>
                         </a>
                       </span>
                     <% end %>

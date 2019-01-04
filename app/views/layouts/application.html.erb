@@ -16,7 +16,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-light px-4 border-top border-bottom">
       <a class="navbar-brand" href="/">
         <span class="align-middle home-link">
-          <img src="/assets/lift_icons/gondola.svg" alt="header icon" class="header-icon mb-2">
+          <%= image_tag("lift_icons/gondola.svg", class: "header-icon mb-2") %>
           LiveLiftInfo
         </span>
       </a>
@@ -55,21 +55,21 @@
           </span>
 
           <span class="mx-3 my-auto weather-footer">
-            <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-1">
+            <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
             <span class="external-link-span">
               <%= link_to "Resort Weather Forecast", "https://www.whistlerblackcomb.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx", target: :_blank, class: "pb-1" %>
             </span>
           </span>
           
           <span class="mx-3 my-auto weather-footer">
-            <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-1">
+            <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
             <span class="external-link-span">
               <%= link_to "Environment Canada Weather Forecast", "https://weather.gc.ca/city/pages/bc-86_metric_e.html", target: :_blank, class: "pb-1" %>
             </span>
           </span>
           
           <span class="mx-3 my-auto footer-constant">
-            <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-1">
+            <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
             <span class="external-link-span">
               <%= link_to "Avalanche Canada Forecast", "https://www.avalanche.ca/forecasts/sea-to-sky", target: :_blank, class: "pb-1" %>
             </span>

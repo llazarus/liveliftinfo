@@ -21,15 +21,15 @@ class ApplicationController < ActionController::Base
 
   def retrieve_lift_image(lift_type) 
     if lift_type == "T"
-      "/assets/lift_icons/rope_tow.svg"
+      "lift_icons/rope_tow.svg"
     elsif lift_type == "3"
-      "/assets/lift_icons/three_p_chair.svg"
+      "lift_icons/three_p_chair.svg"
     elsif lift_type == "4"
-      "/assets/lift_icons/four_p_chair.svg"
+      "lift_icons/four_p_chair.svg"
     elsif lift_type == "6"
-      "/assets/lift_icons/six_p_chair.svg"
+      "lift_icons/six_p_chair.svg"
     else
-      "/assets/lift_icons/gondola.svg"
+      "lift_icons/gondola.svg"
     end
   end
   helper_method :retrieve_lift_image
@@ -52,21 +52,21 @@ class ApplicationController < ActionController::Base
   def retrieve_weather_image(weather_description)
     description = weather_description.downcase
     if description == "fairpartlycloudy" || description == "mostlysunny"
-      "/assets/weather_icons/partly_cloudy.svg"
+      "weather_icons/partly_cloudy.svg"
     elsif description == "sunny"
-      "/assets/weather_icons/sunny.svg"
+      "weather_icons/sunny.svg"
     elsif description == "cloudy" || description == "mostlycloudy"
-      "/assets/weather_icons/cloudy.svg"
+      "weather_icons/cloudy.svg"
     elsif description == "rain"
-      "/assets/weather_icons/rain.svg"
+      "weather_icons/rain.svg"
     elsif description == "showers"
-      "/assets/weather_icons/rain_showers.svg"
+      "weather_icons/rain_showers.svg"
     elsif description == "snowshowers"
-      "/assets/weather_icons/snow_showers.svg"
+      "weather_icons/snow_showers.svg"
     elsif description == "snow"
-      "/assets/weather_icons/snow.svg"
+      "weather_icons/snow.svg"
     else
-      "/assets/weather_icons/weather_generic.svg"
+      "weather_icons/weather_generic.svg"
     end
   end
   helper_method :retrieve_weather_image

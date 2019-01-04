@@ -6,7 +6,7 @@
           <%= @weather.forecast[day]["dayDescription"] %>
         </div>
         <div class="col border border-dark rounded weather-image mx-auto mb-1">
-          <img src="<%= retrieve_weather_image(@weather.forecast[day]["iconName"]) %>" class="weather-image h-90 img-fluid mx-auto d-block p-3">
+          <%= image_tag("#{retrieve_weather_image(@weather.forecast[day]["iconName"])}", class: "weather-image h-90 img-fluid mx-auto d-block p-3") %>
         </div>
         <div class="col">
           <div class="row justify-content-center">
@@ -38,13 +38,13 @@
 
   <div class="row justify-content-center pb-3">
     <span class="w-100 text-center align-middle">
-      <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-1">
+      <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
       <span class="external-link-span">
         <%= link_to "Resort Weather Forecast", "https://www.whistlerblackcomb.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx", target: :_blank, class: "pb-1" %>
       </span>
     </span>
     <span class="w-100 text-center align-middle">
-      <img src="/assets/general_icons/external_link.svg" class="external-link img-fluid mr-1">
+        <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
       <span class="external-link-span">
         <%= link_to "Environment Canada Weather Forecast", "https://weather.gc.ca/city/pages/bc-86_metric_e.html", target: :_blank, class: "pb-1" %>
       </span>
