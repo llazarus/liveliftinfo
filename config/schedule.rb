@@ -10,7 +10,7 @@
 # Set output of cron logs to
 set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
 # Set environment to development, CHANGE FOR PRODUCTION
-set :environment, "development"
+set :environment, "production"
 
 # UNCOMMENT BELOW THIS LINE!!!
 
