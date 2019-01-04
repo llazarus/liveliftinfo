@@ -13,10 +13,10 @@
           Closed <%= image_tag("status_icons/closed.svg", class: "lift-legend pb-1") %> |
         </span>
         <span class="h-100 mx-3">
-          Hold <img src="assets/status_icons/hold.svg" alt="hold-legend" class="lift-legend pb-1"> | 
+          Hold <%= image_tag("status_icons/hold.svg", class: "lift-legend pb-1") %> | 
         </span>
         <span class="h-100 mr-3">
-          Open <img src="assets/status_icons/open.svg" alt="open-legend" class="lift-legend pb-1">
+          Open <%= image_tag("status_icons/open.svg", class: "lift-legend pb-1") %>
         </span>
       </span>
     </div>
@@ -65,7 +65,7 @@
           <div id="collapse-cams-all" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-cams-all">
             <div class="panel-body" class="webcam-div">
               <div id="webcam-load" class="load-complete">
-                <img src="assets/general_icons/loading.svg" alt="loader">
+                <%= image_tag("general_icons/loading.svg") %>
               </div>
               <div id="load-cams-here">
               </div>
@@ -146,12 +146,12 @@
               You haven't created any favorites or alerts yet! <br><br>
               Press the star button to add or remove a favorite:  
               <a href="#" class="btn btn-lg btn-warning no-favorite ml-2">
-                <img src="assets/general_icons/favorite_null.svg" class="favorite-icon img-fluid">
+                <%= image_tag("general_icons/favorite_null.svg", class: "favorite-icon img-fluid") %>
               </a>
               <br><br>
               Press the bell button to add or remove a text message alert:
               <a href="#" class="btn btn-lg btn-danger no-alert ml-2">
-                <img src="assets/general_icons/alert_null.svg" class="favorite-icon img-fluid">
+                <%= image_tag("general_icons/alert_null.svg", class: "favorite-icon img-fluid") %>
               </a>
             </h3>
           </div>
