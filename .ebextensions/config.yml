@@ -9,3 +9,7 @@ commands:
     # run this command from /tmp directory
     cwd: /tmp
     command: 'sudo yum -y install nodejs'
+
+packages:
+  yum:
+    postgresql93-devel: []
