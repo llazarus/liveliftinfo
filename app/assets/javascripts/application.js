@@ -32,8 +32,8 @@ $(document).ready(function() {
   });
 
   // Retain active tab in local storage for data refresh
-  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-    localStorage.setItem('activeTab', $(e.target).attr('href'));
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (event) {
+    localStorage.setItem('activeTab', $(event.target).attr('href'));
   });
   let activeTab = localStorage.getItem('activeTab');
   if (activeTab) {
@@ -48,7 +48,8 @@ $(document).ready(function() {
     location.reload();
   });
 
-  $("#toggle-units").click(function() {
+  // Toggle units on hyperlink click
+  $("#toggle-units").click(function(event) {
     event.preventDefault();
     $(".toggle-unit").toggleClass("no-show show");
   });
