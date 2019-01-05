@@ -25,12 +25,12 @@
           <tr class="toggle-unit no-show">
             <td class="font-weight-bold text-right">Lift Base Elevation:</td>
             <td></td>
-            <td><%= lift.elevation_i %> ft.</td>
+            <td class="align-middle"><%= lift.elevation_i %> ft.</td>
           </tr>
           <tr class="toggle-unit show">
             <td class="font-weight-bold text-right">Lift Base Elevation:</td>
             <td></td>
-            <td><%= lift.elevation_m %> m.</td>
+            <td class="align-middle"><%= lift.elevation_m %> m.</td>
           </tr>
           <tr class="toggle-unit no-show">
             <td class="font-weight-bold text-right">Vertical:</td>
@@ -57,31 +57,31 @@
         </tr>
         <tr>
           <td scope="col" colspan="2" class="status-bg">
-            <div class="row justify-content-around">
-            <span class="toggle-unit no-show">
-              <strong>24 Hours:</strong> <%= @weather.new_snow_i %> in. 
-            </span>
-            <span class="toggle-unit no-show">
-              <strong>48 Hours:</strong> <%= @weather.two_days_i %> in.
-            </span>
-            <span class="toggle-unit no-show">
-              <strong>Past Week:</strong> <%= @weather.seven_days_i %> in.
-            </span>
-            <span class="toggle-unit no-show">
-              <strong>Snowpack Depth:</strong> <%= @weather.snowpack_i %> in.
-            </span>
-            <span class="toggle-unit show">
-              <strong>24 Hours:</strong> <%= (@weather.new_snow_i.to_i * 2.5).to_s %> cm. 
-            </span>
-            <span class="toggle-unit show">
-              <strong>48 Hours:</strong> <%= (@weather.two_days_i.to_i * 2.5).to_s %> cm.
-            </span>
-            <span class="toggle-unit show">
-              <strong>Past Week:</strong> <%= (@weather.seven_days_i.to_i * 2.5).to_s %> cm.
-            </span>
-            <span class="toggle-unit show">
-              <strong>Snowpack Depth:</strong> <%= (@weather.snowpack_i.to_i * 2.5).to_s %> cm.
-            </span>
+            <div class="row justify-content-around px-2">
+              <span class="toggle-unit no-show">
+                <strong>24 Hours:</strong> <%= @weather.new_snow_i %> in. 
+              </span>
+              <span class="toggle-unit no-show">
+                <strong>48 Hours:</strong> <%= @weather.two_days_i %> in.
+              </span>
+              <span class="toggle-unit no-show">
+                <strong>Past Week:</strong> <%= @weather.seven_days_i %> in.
+              </span>
+              <span class="toggle-unit no-show">
+                <strong>Snowpack Depth:</strong> <%= @weather.snowpack_i %> in.
+              </span>
+              <span class="toggle-unit show">
+                <strong>24 Hours:</strong> <%= (@weather.new_snow_i.to_i * 2.5).to_s %> cm. 
+              </span>
+              <span class="toggle-unit show">
+                <strong>48 Hours:</strong> <%= (@weather.two_days_i.to_i * 2.5).to_s %> cm.
+              </span>
+              <span class="toggle-unit show">
+                <strong>Past Week:</strong> <%= (@weather.seven_days_i.to_i * 2.5).to_s %> cm.
+              </span>
+              <span class="toggle-unit show">
+                <strong>Snowpack Depth:</strong> <%= (@weather.snowpack_i.to_i * 2.5).to_s %> cm.
+              </span>
             </div>
           </td>
         </tr>
@@ -103,11 +103,11 @@
             </th>
 
             <% if @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today-day+1), lift.lift_code, "O"]) != [] %>
-              <td scope="col" colspan="2" class="status-open border-bottom">
+              <td scope="col" class="status-open border-bottom">
                 Opened at <%= @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today-day+1), lift.lift_code, "O"]).first.created_at.strftime("%l:%M %p") %>
               </td>
             <% else %>
-              <td scope="col" colspan="2" class="status-closed border-bottom">
+              <td scope="col" class="status-closed border-bottom">
                 Chair Closed
               </td>
             <% end %>

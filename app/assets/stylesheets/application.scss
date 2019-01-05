@@ -213,6 +213,10 @@ a:hover {
   height: 5em;
 }
 
+.span-height {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 @media (max-width: 575.98px) {
   .icon-legend, .carousel-caption {
     display: none !important;
@@ -240,6 +244,14 @@ a:hover {
 
   .rounded.weather-image {
     max-width: 50%;
+  }
+
+  .span-height,
+  .btn.btn-danger.alerted,
+  .btn.btn-danger.no-alert,
+  .btn.btn-warning.favorite,
+  .btn.btn-warning.no-favorite {
+    height: 96%;
   }
 }
 

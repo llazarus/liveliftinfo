@@ -23,6 +23,7 @@
                     </h5>
                   </div>
                   <div class="col-xs-12 col-sm-4 lift-col-right d-flex pr-5 justify-content-end">
+                    
                     <%= image_tag("#{retrieve_lift_status(lift)}", class: "lift-status img-fluid border rounded mr-2") %>
                     <% if user_signed_in? %>
                       <% if favorite_exists(lift.id, current_user.id) %>
@@ -45,19 +46,17 @@
                         <% end %>
                       <% end %>
                     <% else %>
-                      <span class="d-inline-flex" tabindex="0" data-toggle="tooltip" title="Sign in to create a favorite!">
-                        <a href="#" class="btn btn-outline-warning disabled no-favorite mr-2 pt-2">
+                      <span class="d-inline-flex mr-2 span-height" tabindex="0" data-toggle="tooltip" title="Sign in to create a favorite!">
+                        <a href="#" class="btn btn-outline-warning disabled no-favorite pt-2">
                           <%= image_tag("general_icons/favorite_null.svg", class: "favorite-icon img-fluid") %>
                         </a>
                       </span>
-                      <span class="d-inline-flex" tabindex="0" data-toggle="tooltip" title="Sign in to set an SMS alert!">
+                      <span class="d-inline-flex span-height" tabindex="0" data-toggle="tooltip" title="Sign in to set an SMS alert!">
                         <a href="#" class="btn btn-outline-danger disabled pt-2">
                           <%= image_tag("general_icons/alert_null.svg", class: "alert-icon img-fluid") %>
                         </a>
                       </span>
                     <% end %>
-
-
 
                   </div>  
                 </div>
