@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>LiveLiftInfo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4F6F7"/>
+    <meta name="Description" content="A mobile optimized resource aggregator for skiing and snowboarding near Whistler Blackcomb which allows user favorites and sms text alerts">
+
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -55,21 +58,21 @@
             </span>
           </span>
 
-          <span class="mx-3 my-auto weather-footer">
+          <span class="mx-3 d-flex align-items-center my-auto weather-footer">
             <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
             <span class="external-link-span">
-              <%= link_to "Resort Weather Forecast", "https://www.whistlerblackcomb.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx", target: :_blank, class: "pb-1" %>
+              <%= link_to "Resort Weather Forecast", "https://www.whistlerblackcomb.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx", target: :_blank, rel: "noopener", class: "pb-1" %>
             </span>
           </span>
           
-          <span class="mx-3 my-auto weather-footer">
+          <span class="mx-3 d-flex align-items-center my-auto weather-footer">
             <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
             <span class="external-link-span">
-              <%= link_to "Environment Canada Weather Forecast", "https://weather.gc.ca/city/pages/bc-86_metric_e.html", target: :_blank, class: "pb-1" %>
+              <%= link_to "Environment Canada Weather Forecast", "https://weather.gc.ca/city/pages/bc-86_metric_e.html", target: :_blank, rel: "noopener", class: "pb-1" %>
             </span>
           </span>
           
-          <span class="mx-3 my-auto footer-constant">
+          <span class="mx-3 d-flex align-items-center my-auto footer-constant">
             <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
             <span class="external-link-span">
               <%= link_to "Avalanche Canada Forecast", "https://www.avalanche.ca/forecasts/sea-to-sky", target: :_blank, class: "pb-1" %>

@@ -37,17 +37,17 @@
   </div>
 
   <div class="row justify-content-center pb-3">
-    <span class="w-100 text-center align-middle">
+    <div class="row w-100 align-items-center justify-content-center">
       <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
       <span class="external-link-span">
-        <%= link_to "Resort Weather Forecast", "https://www.whistlerblackcomb.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx", target: :_blank, class: "pb-1" %>
+        <%= link_to "Resort Weather Forecast", "https://www.whistlerblackcomb.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx", target: :_blank, rel: "noopener", class: "pb-1" %>
       </span>
-    </span>
-    <span class="w-100 text-center align-middle">
+    </div>
+    <div class="row w-100 align-items-center justify-content-center">
         <%= image_tag("general_icons/external_link.svg", class: "external-link img-fluid mr-1") %>
       <span class="external-link-span">
-        <%= link_to "Environment Canada Weather Forecast", "https://weather.gc.ca/city/pages/bc-86_metric_e.html", target: :_blank, class: "pb-1" %>
+        <%= link_to "Environment Canada Weather Forecast", "https://weather.gc.ca/city/pages/bc-86_metric_e.html", target: :_blank, rel: "noopener", class: "pb-1" %>
       </span>
-    </span>
+    </div>
   </div>
 </div>

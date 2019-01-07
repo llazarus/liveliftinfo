@@ -32,5 +32,9 @@ module LiveLiftInfo
 
     # Configure ActiveJob to use DelayedJob
     config.active_job.queue_adapter = :delayed_job
+
+    # Use local time for db entries
+    config.time_zone = 'Pacific Time (US & Canada)'
+    config.active_record.default_timezone = :local
   end
 end
