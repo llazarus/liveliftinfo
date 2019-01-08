@@ -1,3 +1,6 @@
 $(document).ready(function() {
-  $('#info-modal').modal('show');
+  if ($ .cookie("popup_1_2") == null) {
+    $('#info-modal').modal('show');
+    $ .cookie("popup_1_2", "2");
+  }
 });
