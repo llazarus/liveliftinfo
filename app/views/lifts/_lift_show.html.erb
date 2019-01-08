@@ -102,9 +102,11 @@
               <%= (Date.today - day).strftime("%B %d, %Y") %>
             </th>
 
-            <% if @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today - day), lift.lift_code, "O"]) != [] %>
+            <% if @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today - day - 8.hours), lift.lift_code, "O"]) != [] %>
               <td scope="col" class="status-open border-bottom">
-                Opened at <%= @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today - day), lift.lift_code, "O"]).first.created_at.strftime("%l:%M %p") %>
+                Opened at <%= ActiveSupport::TimeZone.find_tzinfo("America/Vancouver").utc_to_local(
+                  @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today - day - 8.hours), lift.lift_code, "O"]).first.created_at
+                ).strftime("%l:%M %p") %>
               </td>
             <% else %>
               <td scope="col" class="status-closed border-bottom">
