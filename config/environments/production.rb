@@ -75,7 +75,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = {
-    host: "http://liveliftinfo.us-west-2.elasticbeanstalk.com"
+    host: "www.liveliftinfo.com"
 }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
@@ -100,4 +100,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.time_zone = 'Pacific Time (US & Canada)'
+  config.active_record.default_timezone = :local
 end
