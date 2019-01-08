@@ -17,7 +17,7 @@ class SendLiftAlertJob < ApplicationJob
         secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
 
       sms.publish(phone_number: notify_user.phone, 
-                  message: "#{lift_name} is open!")
+                  message: "#{lift_name} is open! Full site: www.liveliftinfo.com")
 
       # Delete all user row from Favorite table
       Favorite.where({favoritor_id: user.favoritor_id, favoritable_id: lift_id}).first.delete
