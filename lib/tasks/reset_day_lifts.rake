@@ -8,10 +8,12 @@ namespace :reset_day_lifts do
     wb_lifts.each do |lift|
       response_shortcut = response["lifts"][lift]
 
-      Status.create(lift_code: response_shortcut["liftID"],
-                    name: response_shortcut["liftName"],
-                    status: "X")
-      puts "Reset status of #{response_shortcut["liftName"]}!"
+      if response_shortcut["resortID"] == 13
+        Status.create(lift_code: response_shortcut["liftID"],
+                      name: response_shortcut["liftName"],
+                      status: "X")
+        puts "Reset status of #{response_shortcut["liftName"]}!"
+      end
     end
     puts "<<< Reset Complete: Lifts >>>"
   end 

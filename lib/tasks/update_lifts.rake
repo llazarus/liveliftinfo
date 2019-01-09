@@ -12,21 +12,23 @@ namespace :update_lifts do
       code_check = response_shortcut["liftID"]
       db_query_shortcut = Status.where(lift_code: code_check)
 
-      if db_query_shortcut == []
-        # Persist a new Status object if none already exist for comparison
-        Status.create(lift_code: response_shortcut["liftID"],
-                      name: response_shortcut["liftName"],
-                      status: response_shortcut["status"])
-        puts "Created new lift: #{response_shortcut["liftName"]}!"
-      elsif db_query_shortcut.last["status"] != response_shortcut["status"]
-        # Persist a new Status object if the given lift's "status" has changed.
-        Status.create(lift_code: response_shortcut["liftID"],
-                      name: response_shortcut["liftName"],
-                      status: response_shortcut["status"])
-        puts "Updated lift: #{response_shortcut["liftName"]}!"
-      else
-        # Do nothing if given lift's "status" value unchanged
-        puts "No update needed: #{db_query_shortcut.last["name"]}!"
+      if response_shortcut["resortID"] == 13
+        if db_query_shortcut == []
+          # Persist a new Status object if none already exist for comparison
+          Status.create(lift_code: response_shortcut["liftID"],
+                        name: response_shortcut["liftName"],
+                        status: response_shortcut["status"])
+          puts "Created new lift: #{response_shortcut["liftName"]}!"
+        elsif db_query_shortcut.last["status"] != response_shortcut["status"]
+          # Persist a new Status object if the given lift's "status" has changed.
+          Status.create(lift_code: response_shortcut["liftID"],
+                        name: response_shortcut["liftName"],
+                        status: response_shortcut["status"])
+          puts "Updated lift: #{response_shortcut["liftName"]}!"
+        else
+          # Do nothing if given lift's "status" value unchanged
+          puts "No update needed: #{db_query_shortcut.last["name"]}!"
+        end
       end
     end
     puts "<<< Update Complete: Lifts >>>"
