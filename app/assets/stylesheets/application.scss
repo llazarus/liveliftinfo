@@ -217,6 +217,18 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+@media (max-width: 325px) {
+  a {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 375px) {
+  a.lift-panel-heading {
+    font-size: 85%;
+  }
+}
+
 @media (max-width: 575.98px) {
   .icon-legend, .carousel-caption {
     display: none !important;
@@ -252,10 +264,6 @@ a:hover {
   .btn.btn-warning.favorite,
   .btn.btn-warning.no-favorite {
     height: 96%;
-  }
-
-  a.lift-panel-heading {
-    font-size: 85%;
   }
 
   .lift-panel-heading {
