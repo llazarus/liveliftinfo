@@ -20,7 +20,7 @@ class SendLiftAlertJob < ApplicationJob
                   message: "#{lift_name} is open! Full site: www.liveliftinfo.com")
 
       # Delete all user row from Favorite table
-      Favorite.where({favoritor_id: user.favoritor_id, favoritable_id: lift_id}).first.delete
+      Favorite.where({favoritable_type: "Alert", favoritor_id: user.favoritor_id, favoritable_id: lift_id}).first.delete
       end
 
       puts "<<< Sent SMS Alerts For #{lift_name} >>> \n\n"
