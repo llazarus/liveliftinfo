@@ -14,7 +14,7 @@ Lift.create(
 
 Lift.create(
   lift_code: 70,
-  name: "Blackcomb Gondola Mid",
+  name: "Blackcomb Gondola Upper",
   time_to_ride: "13",
   lift_type: "G",
   capacity: "10",
@@ -42,7 +42,7 @@ Lift.create(
 
 Lift.create(
   lift_code: 71,
-  name: "Excalibur Gondola Mid",
+  name: "Excalibur Gondola Upper",
   time_to_ride: "7",
   lift_type: "G",
   capacity: "8",
@@ -210,7 +210,7 @@ Lift.create(
 
 Lift.create(
   lift_code: 33,
-  name: "Whistler Village Gondola Lower",
+  name: "Whistler Village Gondola Upper",
   time_to_ride: "15",
   lift_type: "G",
   capacity: "8",
@@ -399,7 +399,7 @@ Alert.create(
 
 Alert.create(
   lift_code: 70,
-  name: "Blackcomb Gondola Mid"
+  name: "Blackcomb Gondola Upper"
 )
 
 Alert.create(
@@ -409,7 +409,7 @@ Alert.create(
 
 Alert.create(
   lift_code: 71,
-  name: "Excalibur Gondola Mid"
+  name: "Excalibur Gondola Upper"
 )
 
 Alert.create(
@@ -474,7 +474,7 @@ Alert.create(
 
 Alert.create(
   lift_code: 72,
-  name: "Whistler Village Gondola Mid"
+  name: "Whistler Village Gondola Upper"
 )
 
 Alert.create(
