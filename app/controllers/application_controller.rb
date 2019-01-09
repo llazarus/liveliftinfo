@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def retrieve_lift_status(lift) 
-    status = Status.where(lift_code: lift.lift_code).last&.status.upcase
+  def retrieve_lift_status(lift)
+    status = Status.where(lift_code: lift.lift_code).last&.status&.upcase
 
     if status == "O"
       "status_icons/open.svg"
