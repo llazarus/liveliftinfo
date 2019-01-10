@@ -4,7 +4,7 @@ namespace :reset_day_lifts do
     puts "<<< Contacting API: Lifts (Daily Reset) At #{Time.now.strftime("%H:%M:%S")} >>>"
     response = HTTParty.get("http://www.epicmix.com/vailresorts/sites/epicmix/api/mobile/lifts.ashx")
 
-    wb_lifts = Array(244..272)
+    wb_lifts = Array(242..272)
     wb_lifts.each do |lift|
       response_shortcut = response["lifts"][lift]
 

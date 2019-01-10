@@ -8,7 +8,7 @@ namespace :update_lifts do
       response = HTTParty.get("http://www.epicmix.com/vailresorts/sites/epicmix/api/mobile/lifts.ashx")
   
       # wb_lifts is an array containing all relevant indexes of the returned "lifts" object
-      wb_lifts = Array(244..272)
+      wb_lifts = Array(242..272)
   
       wb_lifts.each do |lift|
         response_shortcut = response["lifts"][lift]
