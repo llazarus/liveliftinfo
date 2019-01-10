@@ -15,11 +15,11 @@
         <tbody>
           <tr>
             <td class="font-weight-bold text-right">Issued:</td>
-            <td><%= @avalanche.date_issued.strftime("%B %d, %Y") %></td>
+            <td><%= ActiveSupport::TimeZone.find_tzinfo("America/Vancouver").utc_to_local(@avalanche.date_issued).strftime("%B %d, %Y") %></td>
           </tr>
           <tr>
             <td class="font-weight-bold text-right text-nowrap">Valid Until:</td>
-            <td><%= @avalanche.valid_until.strftime("%B %d, %Y") %></td>
+            <td><%= ActiveSupport::TimeZone.find_tzinfo("America/Vancouver").utc_to_local(@avalanche.valid_until).strftime("%B %d, %Y") %></td>
           </tr>
           <tr>
             <td class="font-weight-bold text-right">Highlights:</td>
