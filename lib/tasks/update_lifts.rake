@@ -1,7 +1,7 @@
 namespace :update_lifts do
   desc "Call API. Persist in Statuses table if lift status has changed since the last API call"
   task update_lifts: :environment do
-    time = Time.now.strftime("%H:%M:%S")
+    time = ActiveSupport::TimeZone.find_tzinfo("America/Vancouver").utc_to_local(Time.now).strftime("%H:%M:%S")
     
     if time > "05:59:00" && time < "18:30:00"
       puts "<<< Contacting API: Lifts At #{Time.now.strftime("%H:%M:%S")} >>>"

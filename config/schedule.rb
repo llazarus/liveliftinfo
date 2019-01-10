@@ -1,11 +1,9 @@
-# Use this file to easily define all of your cron jobs.
-#
-# It's helpful, but not entirely necessary to understand cron before proceeding.
-# http://en.wikipedia.org/wiki/Cron
-# 
-# Examples: http://github.com/javan/whenever
-#  
+require "tzinfo"
 ### WHENEVER YOU ADD A JOB, IN TERMINAL RUN: "whenever --update-crontab" ###
+
+def local(time)
+  TZInfo::Timezone.get("America/Vancouver").local_to_utc(Time.parse(time))
+end
 
 # Set environment to development, CHANGE FOR PRODUCTION
 set :environment, "production"
@@ -18,17 +16,17 @@ every 1.minute do
 end
 
 # Default lift status to "X" at the beginning and end of each day
-every 1.day, at: ['12:05 am', '11:55 pm'] do
+every 1.day, at: [local('12:05 am'), local('11:55 pm')] do
   rake "reset_day_lifts:reset_day_lifts"
 end
 
 # Delete_all Favorites with favoritable_type = "Alert" at the end of each day
-every 1.day, at: '11:55 pm' do
+every 1.day, at: local('11:55 pm') do
   rake "reset_day_alerts:reset_day_alerts"
 end
 
 # Update AC Forecast every day at 06:00 and 11:30
-every 1.day, at: ['6:00 am', '11:30 am'] do
+every 1.day, at: [local('6:00 am'), local('11:30 am')] do
   rake "update_avalanche:update_avalanche"
 end
 
