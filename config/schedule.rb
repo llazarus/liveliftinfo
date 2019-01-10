@@ -10,8 +10,6 @@
 # Set environment to development, CHANGE FOR PRODUCTION
 set :environment, "production"
 
-Time.zone = "US/Pacific"
-
 # UNCOMMENT BELOW THIS LINE!!!
 
 # Update lifts every minute between the hours of 06:00 and 18:30
