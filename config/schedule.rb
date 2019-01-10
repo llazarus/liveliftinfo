@@ -10,7 +10,7 @@
 # Set environment to development, CHANGE FOR PRODUCTION
 set :environment, "production"
 
-Time.zone = 'America/Vancouver'
+Time.zone = "US/Pacific"
 
 # UNCOMMENT BELOW THIS LINE!!!
 
