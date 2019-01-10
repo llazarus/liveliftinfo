@@ -14,9 +14,7 @@ set :environment, "production"
 
 # Update lifts every minute between the hours of 06:00 and 18:30
 every 1.minute do
-  
-    rake "update_lifts:update_lifts"
-  end
+  rake "update_lifts:update_lifts"
 end
 
 # Default lift status to "X" at the beginning and end of each day
