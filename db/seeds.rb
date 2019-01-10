@@ -210,7 +210,7 @@ Lift.create(
 
 Lift.create(
   lift_code: 33,
-  name: "Whistler Village Gondola Upper",
+  name: "Whistler Village Gondola Lower",
   time_to_ride: "15",
   lift_type: "G",
   capacity: "8",
@@ -224,7 +224,7 @@ Lift.create(
 
 Lift.create(
   lift_code: 72,
-  name: "Whistler Village Gondola Mid",
+  name: "Whistler Village Gondola Upper",
   time_to_ride: "11",
   lift_type: "G",
   capacity: "8",

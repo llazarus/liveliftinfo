@@ -217,6 +217,16 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.form-check-input.is-valid ~ .form-check-label {
+  color: black;
+}
+
+.alert-alert {
+  background-color: #f8d7da;
+  color: #711c24;
+  border-color: #f5c6cb;
+}
+
 @media (max-width: 325px) {
   a {
     max-width: 90%;

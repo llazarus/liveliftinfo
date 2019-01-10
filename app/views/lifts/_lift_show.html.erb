@@ -99,13 +99,13 @@
         <tbody>
           <tr>
             <th scope="row" class="status-bg border-bottom">
-              <%= (Date.today - day).strftime("%B %d, %Y") %>
+              <%= (Date.today - (day + 1)).strftime("%B %d, %Y") %>
             </th>
 
-            <% if @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today - day - 8.hours), lift.lift_code, "O"]) != [] %>
+            <% if @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today - (day + 1)), lift.lift_code, "O"]) != [] %>
               <td scope="col" class="status-open border-bottom">
                 Opened at <%= ActiveSupport::TimeZone.find_tzinfo("America/Vancouver").utc_to_local(
-                  @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today - day - 8.hours), lift.lift_code, "O"]).first.created_at
+                  @history.where(["created_at::date = ? and lift_code = ? and status = ?", (Date.today - (day + 1)), lift.lift_code, "O"]).first.created_at
                 ).strftime("%l:%M %p") %>
               </td>
             <% else %>

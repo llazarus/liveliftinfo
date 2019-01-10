@@ -12,11 +12,9 @@ set :environment, "production"
 
 # UNCOMMENT BELOW THIS LINE!!!
 
-# Update lifts every minute between the hours of 06:00 and 18:00
+# Update lifts every minute between the hours of 06:00 and 18:30
 every 1.minute do
-  time = Time.now.strftime("%H:%M:%S")
-
-  if time > "05:59:00" && time < "18:30:00"
+  
     rake "update_lifts:update_lifts"
   end
 end
