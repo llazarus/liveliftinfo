@@ -3,7 +3,7 @@ namespace :update_lifts do
   task update_lifts: :environment do
     time = ActiveSupport::TimeZone.find_tzinfo("America/Vancouver").utc_to_local(Time.now).strftime("%H:%M:%S")
     
-    if time > "05:59:00" && time < "18:30:00"
+    if time > "06:59:00" && time < "20:30:00"
       puts "<<< Contacting API: Lifts At #{Time.now.strftime("%H:%M:%S")} >>>"
       response = HTTParty.get("http://www.epicmix.com/vailresorts/sites/epicmix/api/mobile/lifts.ashx")
   

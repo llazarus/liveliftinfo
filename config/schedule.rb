@@ -10,7 +10,7 @@ set :environment, "production"
 
 # UNCOMMENT BELOW THIS LINE!!!
 
-# Update lifts every minute between the hours of 06:00 and 18:30
+# Update lifts every minute between the hours of 07:00 and 20:30
 every 1.minute do
   rake "update_lifts:update_lifts"
 end
